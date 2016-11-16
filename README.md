@@ -13,4 +13,4 @@ DataTorrent provides various Application Templates for ingestion that allow user
 - Quickly launch template applications to ingest raw data, while also having an easy and iterative way to add business logic and processing logic such as parse, dedup, filter, transform, enrich etc to the ingestion pipelines.
 - Visualize various metrics based on throughput, latency and app data in real-time throughout the execution.
 
-Clone this repository to try out the application templates OR download the ready to launch application templates from [DataTorrent AppHub](www.datatorrent.com/apphub/) to try running the applications. Follow the tutorial videos or walkthrough documents for any of the applications to launch the template and add custom logic to process the data during ingestion.
+Clone this repository to try out the application templates OR download the ready to launch application templates from [DataTorrent AppHub](https://www.datatorrent.com/apphub/) to try running the applications. Follow the tutorial videos or walkthrough documents for any of the applications to launch the template and add custom logic to process the data during ingestion.
