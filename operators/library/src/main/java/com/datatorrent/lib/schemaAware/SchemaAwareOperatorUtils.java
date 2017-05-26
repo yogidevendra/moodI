@@ -2,7 +2,8 @@ package com.datatorrent.lib.schemaAware;
 
 import java.util.Date;
 
-import com.datatorrent.contrib.parser.DelimitedSchema.FieldType;
+import com.datatorrent.contrib.parser.Schema.FieldType;
+
 
 public class SchemaAwareOperatorUtils
 {

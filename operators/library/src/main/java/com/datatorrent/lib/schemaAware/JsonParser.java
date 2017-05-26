@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.esotericsoftware.kryo.NotNull;
 
-import com.datatorrent.contrib.parser.DelimitedSchema.FieldType;
+import com.datatorrent.contrib.parser.Schema.FieldType;
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaAware;
 

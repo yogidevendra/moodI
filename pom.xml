@@ -9,7 +9,7 @@
   
   <properties>
     <apex.core.version>3.6.0</apex.core.version>
-    <malhar.version>3.6.0</malhar.version>
+    <malhar.version>3.7.0</malhar.version>
     <checkstyle.console>true</checkstyle.console>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
