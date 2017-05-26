@@ -53,7 +53,7 @@ public class TimeBasedDedupOperatorTest
     dedup.setBucketSpan(10);
     dedup.setExpireBefore(60);
     DefaultAttributeMap attributes = new DefaultAttributeMap();
-    OperatorContext context = new OperatorContextTestHelper.TestIdOperatorContext(0, attributes);
+    OperatorContext context = OperatorContextTestHelper.mockOperatorContext(0, attributes);
     dedup.setup(context);
     dedup.input.setup(new PortContext(attributes, context));
   }
