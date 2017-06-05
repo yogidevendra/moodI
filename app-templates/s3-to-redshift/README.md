@@ -32,7 +32,7 @@ Please find the walkthrough docs for app template as follows:
 
 Please find the GitHub URL for app template as follows:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/s3-to-redshift"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/s3-to-redshift</a>
+&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/s3-to-redshift"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/s3-to-redshift</a>
 
 Please send feedback or feature requests to:
 

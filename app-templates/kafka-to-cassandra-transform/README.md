@@ -39,7 +39,7 @@ For [Walkthrough documentation](http://docs.datatorrent.com/app-templates/kafka-
 
 For [GitHub URL](http://docs.datatorrent.com/app-templates/kafka-to-cassandra-transform) refer below link:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/kafka-to-cassandra-transform"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/kafka-to-cassandra-transform</a>
+&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-transform"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-transform</a>
 
 Please send feedback or feature requests to:
 
