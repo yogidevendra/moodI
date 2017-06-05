@@ -42,7 +42,7 @@ Please find the walkthrough docs for app template as follows:
 
 Please find the GitHub URL for app template as follows:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs</a>
+&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-hdfs</a>
 
 Please send feedback or feature requests to:
 
