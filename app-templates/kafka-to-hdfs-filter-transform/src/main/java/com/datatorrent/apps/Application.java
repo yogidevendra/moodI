@@ -27,17 +27,18 @@ import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.parser.JsonParser;
+import com.datatorrent.kafka.KafkaBytesInputOperator;
 import com.datatorrent.lib.filter.FilterOperator;
 import com.datatorrent.lib.formatter.JsonFormatter;
 import com.datatorrent.lib.transform.TransformOperator;
 
-@ApplicationAnnotation(name = "Kafka-to-HDFS-Filter")
+@ApplicationAnnotation(name = "Kafka-to-HDFS-Filter-Transform")
 public class Application implements StreamingApplication
 {
 
   public void populateDAG(DAG dag, Configuration conf)
   {
-    KafkaSinglePortInputOperator kafkaInputOperator = dag.addOperator("kafkaInput", KafkaSinglePortInputOperator.class);
+    KafkaBytesInputOperator kafkaInputOperator = dag.addOperator("kafkaInput", KafkaBytesInputOperator.class);
     JsonParser parser = dag.addOperator("parser", JsonParser.class);
     TransformOperator transform = dag.addOperator("transform", new TransformOperator());
     FilterOperator filterOperator = dag.addOperator("filter", new FilterOperator());

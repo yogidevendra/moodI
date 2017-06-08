@@ -24,6 +24,7 @@
   <property>
     <name>apex.app-param.kafkaBrokerList</name>
     <description>Specify Kafka Broker(s) list. E.g: broker1.com:9092, broker2.com:9093, broker3.com:9094</description>
+    <value>localhost:9092</value>
   </property>
   <property>
     <name>dt.operator.kafkaInput.prop.clusters</name>
@@ -33,6 +34,7 @@
   <property>
     <name>apex.app-param.kafkaTopicName</name>
     <description>Specify topic name of Kafka. E.g: transactions</description>
+    <value>transactions</value>
   </property>
   <property>
     <name>dt.operator.kafkaInput.prop.topics</name>
@@ -41,7 +43,7 @@
 
   <property>
     <name>apex.app-param.initialOffsetOfTopicForKafkaConsumer</name>
-    <value>LATEST</value>
+    <value>EARLIEST</value>
     <description>Specify initial offset from the position where Kafka consumer starts reading messages. E.g: LATEST</description>
   </property>
   <property>
@@ -52,6 +54,7 @@
   <property>
     <name>apex.app-param.FilterConditionForTuples</name>
     <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
+    <value>({$}.getPremium() >= 5000)</value>
   </property>
   <property>
     <name>dt.operator.filter.prop.condition</name>
@@ -61,6 +64,7 @@
   <property>
     <name>apex.app-param.outputDirectoryPath</name>
     <description>Specify output directory path on HDFS. E.g: hdfs://destination-namenode-service:port/user/dtuser/path-to-output-directory</description>
+    <value>/tmp</value>
   </property>
   <property>
     <name>dt.operator.fileOutput.prop.filePath</name>
@@ -70,6 +74,7 @@
   <property>
     <name>apex.app-param.outputFileName</name>
     <description>Specify output directory path on HDFS. E.g: output-file-name.txt</description>
+    <value>output.txt</value>
   </property>
   <property>
     <name>dt.operator.fileOutput.prop.outputFileName</name>
@@ -107,6 +112,14 @@
   <property>
     <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
     <value>${apex.app-param.schema.transformedSchema}</value>
+  </property>
+  <property>
+    <name>dt.operator.*.attr.MEMORY_MB</name>
+    <value>750</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.expressionMap(customerName)</name>
+    <value>{$.customerName}.toUpperCase()</value>
   </property>
 </configuration>
 
