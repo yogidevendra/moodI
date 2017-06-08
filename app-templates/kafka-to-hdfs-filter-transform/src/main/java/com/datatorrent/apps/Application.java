@@ -23,28 +23,27 @@ import org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator;
 import org.apache.apex.malhar.lib.fs.GenericFileOutputOperator.StringFileOutputOperator;
 import org.apache.hadoop.conf.Configuration;
 
-import com.datatorrent.api.DAG; 
+import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.contrib.parser.JsonParser;
-import com.datatorrent.lib.filter.FilterOperator;
-import com.datatorrent.lib.formatter.JsonFormatter;
-import com.datatorrent.lib.transform.TransformOperator;
+import com.datatorrent.lib.schemaAware.FilterOperator;
+import com.datatorrent.lib.schemaAware.JsonFormatter;
+import com.datatorrent.lib.schemaAware.JsonParser;
+import com.datatorrent.lib.schemaAware.TransformOperator;
 
-@ApplicationAnnotation(name = "Kafka-to-HDFS-Filter")
+@ApplicationAnnotation(name = "Kafka-to-HDFS-Filter-Transform")
 public class Application implements StreamingApplication
 {
 
   public void populateDAG(DAG dag, Configuration conf)
   {
     KafkaSinglePortInputOperator kafkaInputOperator = dag.addOperator("kafkaInput", KafkaSinglePortInputOperator.class);
-    JsonParser parser = dag.addOperator("parser", JsonParser.class);
+    JsonParser parser = dag.addOperator("parser", new JsonParser());
     TransformOperator transform = dag.addOperator("transform", new TransformOperator());
     FilterOperator filterOperator = dag.addOperator("filter", new FilterOperator());
-    JsonFormatter formatter = dag.addOperator("formatter", JsonFormatter.class);
-
+    JsonFormatter formatter = dag.addOperator("formatter", new JsonFormatter());
     StringFileOutputOperator fileOutput = dag.addOperator("fileOutput", new StringFileOutputOperator());
-    
+
     dag.addStream("data", kafkaInputOperator.outputPort, parser.in);
     dag.addStream("pojo", parser.out, filterOperator.input);
     dag.addStream("filtered", filterOperator.truePort, transform.input);
