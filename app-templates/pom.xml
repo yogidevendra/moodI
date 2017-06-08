@@ -154,5 +154,6 @@
     <!-- Add individual app templates as modules here -->
     <module>hdfs-to-hdfs-filter-transform</module>
     <module>kafka-to-hdfs-filter-transform</module>
+    <module>kafka-to-kafka-filter-transform</module>
   </modules>
 </project>

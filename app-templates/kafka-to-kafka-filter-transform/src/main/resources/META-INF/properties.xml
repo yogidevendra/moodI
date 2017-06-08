@@ -22,16 +22,6 @@
 <configuration>
 
   <property>
-    <name>apex.app-param.JsonInputPojoName</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify the name of Json input Pojo class.</description>
-  </property>
-  <property>
-    <name>dt.operator.JsonFormatter.port.in.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.JsonInputPojoName}</value>
-  </property>
-
-  <property>
     <name>apex.app-param.kafkaBrokerList</name>
     <description>Specify Kafka Broker(s) list. E.g: broker1.com:9092, broker2.com:9093, broker3.com:9094</description>
   </property>
@@ -60,55 +50,41 @@
   </property>
 
   <property>
+    <name>apex.app-param.jsonParserFieldInfo</name>
+    <description>Specify fields and their data types in Json Format. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g {"adId":"INTEGER","adName":"STRING","bidPrice":"DOUBLE"}</description>
+  </property>
+  <property>
+    <name>dt.operator.jsonParser.prop.fieldInfo</name>
+    <value>${apex.app-param.jsonParserFieldInfo}</value>
+  </property>
+  
+  <property>
     <name>apex.app-param.FilterConditionForTuples</name>
-    <value>({$}.getAmount() >= 20000)</value>
     <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
   </property>
   <property>
     <name>dt.operator.filter.prop.condition</name>
     <value>${apex.app-param.FilterConditionForTuples}</value>
   </property>
-
+  
   <property>
-    <name>apex.app-param.tupleClassNameForFilterInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for filter input.</description>
-  </property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property> 
   <property>
-    <name>dt.operator.filter.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForFilterInput}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForTransformInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform input.</description>
-  </property>
-  <property>
-    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForTransformOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform output.</description>
-  </property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 1.0"} </description>
+  </property> 
   <property>
-    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
   </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForJsonOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for JSON output.</description>
-  </property>
-  <property>
-    <name>dt.operator.JsonParser.port.out.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForJsonOutput}</value>
-  </property>
-
+  
   <property>
     <name>apex.app-param.KafkaOutputTopicName</name>
     <description>Specify Kafka topic name for producer. Eg: transactions</description>
@@ -120,7 +96,7 @@
 
   <property>
     <name>apex.app-param.kafkaProducerProperties</name>
-    <description>Specify Kafka producer properties like broker list, serializer class etc. Eg: serializer.class=kafka.serializer.DefaultEncoder,producer.type=async,metadata.broker.list=localhost:9092</description>
+    <description>Specify Kafka producer properties like broker list, serializer class etc. Eg: serializer.class=kafka.serializer.StringEncoder,producer.type=async,metadata.broker.list=localhost:9092</description>
   </property>
   <property>
     <name>dt.operator.kafkaOutput.prop.producerProperties</name>
@@ -129,7 +105,7 @@
 
   <property>
     <name>apex.app-param.numberOfPartitionsForKafkaConsumer</name>
-    <value>com.datatorrent.common.partitioner.StatelessPartitioner:4</value>
+    <value>com.datatorrent.common.partitioner.StatelessPartitioner:1</value>
     <description>Specify number of partitions for kafka consumer.</description>
   </property>
   <property>

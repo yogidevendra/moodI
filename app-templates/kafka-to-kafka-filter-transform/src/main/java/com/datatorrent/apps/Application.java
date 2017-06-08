@@ -19,23 +19,19 @@
 
 package com.datatorrent.apps;
 
-import java.util.Map;
-
 import org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator;
 import org.apache.hadoop.conf.Configuration;
-
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.kafka.KafkaSinglePortOutputOperator;
-import com.datatorrent.contrib.parser.JsonParser;
-import com.datatorrent.lib.filter.FilterOperator;
-import com.datatorrent.lib.formatter.JsonFormatter;
-import com.datatorrent.lib.transform.TransformOperator;
+import com.datatorrent.lib.schemaAware.FilterOperator;
+import com.datatorrent.lib.schemaAware.JsonFormatter;
+import com.datatorrent.lib.schemaAware.JsonParser;
+import com.datatorrent.lib.schemaAware.TransformOperator;
 
-@ApplicationAnnotation(name = "Kafka-to-Kafka-Transform")
+@ApplicationAnnotation(name = "Kafka-to-Kafka-Filter-Transform")
 public class Application implements StreamingApplication
 {
 
@@ -45,19 +41,16 @@ public class Application implements StreamingApplication
     KafkaSinglePortInputOperator kafkaInputOperator = dag.addOperator("kafkaInput", KafkaSinglePortInputOperator.class);
 
     // Parses a json string tuple against a specified json schema and emits JSONObject.
-    JsonParser jsonParser = dag.addOperator("JsonParser", JsonParser.class);
+    JsonParser jsonParser = dag.addOperator("jsonParser", JsonParser.class);
 
     // Filters the tuple as per specified condition by user.
-    FilterOperator filterOperator = dag.addOperator("filter", new FilterOperator());
+    FilterOperator filterOperator = dag.addOperator("filter", FilterOperator.class);
 
     // Transforms the tuple value to user logic. Note logic may be modified.
-    TransformOperator transform = dag.addOperator("transform", new TransformOperator());
-    Map<String, String> expMap = Maps.newHashMap();
-    expMap.put("name", "{$.name}.toUpperCase()");
-    transform.setExpressionMap(expMap);
+    TransformOperator transform = dag.addOperator("transform", TransformOperator.class);
 
     // Format the transformed logic into JSON format.
-    JsonFormatter jsonFormatter = dag.addOperator("JsonFormatter", JsonFormatter.class);
+    JsonFormatter jsonFormatter = dag.addOperator("jsonFormatter", JsonFormatter.class);
 
     // Publish the data to kafka consumers.
     KafkaSinglePortOutputOperator kafkaOutput = dag.addOperator("kafkaOutput", KafkaSinglePortOutputOperator.class);
