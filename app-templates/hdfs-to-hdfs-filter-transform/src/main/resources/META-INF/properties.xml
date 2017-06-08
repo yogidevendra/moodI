@@ -16,18 +16,7 @@
     under the License.
 -->
 <configuration>
-  <!--
-  <property>
-    <name>dt.application.{appName}.operator.{opName}.prop.{propName}</name>
-    <value>some-default-value (if value is not specified, it is required from the user or custom config when launching)</value>
-  </property>
-  -->
-  <!-- memory assigned to app master
-  <property>
-    <name>dt.attr.MASTER_MEMORY_MB</name>
-    <value>1024</value>
-  </property>
-  -->
+
   <property>
     <name>apex.app-param.inputDirectoryOrFilePath</name>
     <description>Specify input path of directory or file. E.g: hdfs://source-namenode-service:port/user/dtuser/path-to-input-directory</description>
@@ -97,25 +86,6 @@
 
   <property>
     <name>apex.app-param.csvParserSchema</name>
-    <value>{
-      "separator": "|",
-      "quoteChar": "\"",
-      "fields": [
-      {
-      "name": "accountNumber",
-      "type": "Integer"
-      },
-      {
-      "name": "name",
-      "type": "String"
-      },
-      {
-      "name": "amount",
-      "type": "Integer"
-      }
-      ]
-      }
-    </value>
     <description>Specify schema for CSV Parser.</description>
   </property>
   <property>
@@ -125,26 +95,7 @@
 
   <property>
     <name>apex.app-param.csvFormatterSchema</name>
-    <value>{
-      "separator": "|",
-      "quoteChar": "\"",
-      "fields": [
-      {
-      "name": "accountNumber",
-      "type": "Integer"
-      },
-      {
-      "name": "name",
-      "type": "String"
-      },
-      {
-      "name": "amount",
-      "type": "Integer"
-      }
-      ]
-      }
-    </value>
-    <description>Specify schema for CSV Formatter.</description>
+   <description>Specify schema for CSV Formatter.</description>
   </property>
   <property>
     <name>dt.operator.formatter.prop.schema</name>
@@ -152,60 +103,30 @@
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForCsvParserOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for csv parser output.</description>
-  </property>
-  <property>
-    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForCsvParserOutput}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForFormatterInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for formatter input.</description>
-  </property>
-  <property>
-    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForFormatterInput}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForTransformInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform input.</description>
-  </property>
-  <property>
-    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
-  </property>
-  <property>
-    <name>apex.app-param.tupleClassNameForFilterInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for filter input.</description>
-  </property>
-  <property>
-    <name>dt.operator.filter.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForFilterInput}</value>
-  </property>
-  <property>
     <name>apex.app-param.FilterConditionForTuples</name>
-    <value>({$}.getAmount() >= 5000)</value>
     <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 5000)</description>
   </property>
   <property>
     <name>dt.operator.filter.prop.condition</name>
     <value>${apex.app-param.FilterConditionForTuples}</value>
   </property>
+  
   <property>
-    <name>apex.app-param.tupleClassNameForTransformOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform output.</description>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
   </property>
+
   <property>
-    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
   </property>
 
 </configuration>
