@@ -3,11 +3,10 @@
 
   <property>
     <name>apex.app-param.TableName</name>
-    <value>test_event_output_table</value>
     <description>Specify the table name on cassandra store.</description>
   </property>
   <property>
-    <name>dt.operator.CassandraOutput.prop.tablename</name>
+    <name>dt.operator.cassandraOutput.prop.tablename</name>
     <value>${apex.app-param.TableName}</value>
   </property>
 
@@ -16,28 +15,17 @@
     <description>Specify the Cassandra node name to form a cluster.</description>
   </property>
   <property>
-    <name>dt.operator.CassandraOutput.prop.store.node</name>
+    <name>dt.operator.cassandraOutput.prop.store.node</name>
     <value>${apex.app-param.CassandraNodeName}</value>
   </property>
 
   <property>
     <name>apex.app-param.KeySpaceOnCassandra</name>
-    <value>testdb</value>
     <description>Specify the key space on cassandra node.</description>
   </property>
   <property>
-    <name>dt.operator.CassandraOutput.prop.store.keyspace</name>
+    <name>dt.operator.cassandraOutput.prop.store.keyspace</name>
     <value>${apex.app-param.KeySpaceOnCassandra}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.PojoClassName</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify the name of Pojo class.</description>
-  </property>
-  <property>
-    <name>dt.operator.CassandraOutput.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.PojoClassName}</value>
   </property>
 
   <property>
@@ -70,7 +58,6 @@
 
   <property>
     <name>apex.app-param.FilterConditionForTuples</name>
-    <value>({$}.getAmount() >= 20000)</value>
     <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
   </property>
   <property>
@@ -79,44 +66,31 @@
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForFilterInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for filter input.</description>
+    <name>apex.app-param.jsonParserFieldInfo</name>
+    <description>Specify fields and their data types in Json Format. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g {"adId":"INTEGER","adName":"STRING","bidPrice":"DOUBLE"}</description>
   </property>
   <property>
-    <name>dt.operator.filter.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForFilterInput}</value>
+    <name>dt.operator.jsonParser.prop.fieldInfo</name>
+    <value>${apex.app-param.jsonParserFieldInfo}</value>
+  </property>
+  
+   <property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property> 
+  <property>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForTransformInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform input.</description>
-  </property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
+  </property> 
   <property>
-    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
   </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForTransformOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform output.</description>
-  </property>
-  <property>
-    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForJsonOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for JSON output.</description>
-  </property>
-  <property>
-    <name>dt.operator.JsonParser.port.out.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForJsonOutput}</value>
-  </property>
-
+ 
 </configuration>
 
