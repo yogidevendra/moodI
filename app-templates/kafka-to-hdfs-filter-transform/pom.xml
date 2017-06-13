@@ -11,32 +11,10 @@
   <description>Ingest and Transform filtered messages from kafka to hadoop HDFS</description>
   
   <dependencies>
-  <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>malhar-kafka</artifactId>
-      <version>${malhar.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <dependency>
-      <groupId>info.batey.kafka</groupId>
-      <artifactId>kafka-unit</artifactId>
-      <version>0.4</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.11</artifactId>
-      <version>0.9.0.1</version>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-kafka</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.janino</groupId>

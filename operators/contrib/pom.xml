@@ -21,5 +21,6 @@
 
   <modules>
     <module>aws-connectors</module>
+    <module>kafka</module>
   </modules>
 </project>
