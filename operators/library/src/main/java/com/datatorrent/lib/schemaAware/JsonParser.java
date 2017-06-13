@@ -10,6 +10,7 @@ import com.esotericsoftware.kryo.NotNull;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.datatorrent.api.AutoMetric;
 import com.datatorrent.contrib.parser.Schema.FieldType;
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaAware;
@@ -26,6 +27,9 @@ public class JsonParser extends com.datatorrent.contrib.parser.JsonParser implem
   @NotNull
   private String fieldInfo;
   private transient Map<String, String> fieldInfoMap = new HashMap<String, String>();
+
+  @AutoMetric
+  private long totalErrorTuples;
 
   /**
    * Adds information of fields to <b>outSchema</b> for <b>out</b> port of
@@ -69,4 +73,10 @@ public class JsonParser extends com.datatorrent.contrib.parser.JsonParser implem
     }
   }
 
+  @Override
+  public void endWindow()
+  {
+    super.endWindow();
+    totalErrorTuples += errorTupleCount;
+  }
 }

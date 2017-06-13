@@ -19,10 +19,9 @@
 
 package com.datatorrent.apps;
 
-import org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator;
-import org.apache.apex.malhar.lib.fs.GenericFileOutputOperator.StringFileOutputOperator;
 import org.apache.hadoop.conf.Configuration;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
@@ -30,6 +29,8 @@ import com.datatorrent.lib.schemaAware.FilterOperator;
 import com.datatorrent.lib.schemaAware.JsonFormatter;
 import com.datatorrent.lib.schemaAware.JsonParser;
 import com.datatorrent.lib.schemaAware.TransformOperator;
+import com.datatorrent.moodi.StringFileOutputOperator;
+import com.datatorrent.moodi.kafka.KafkaSinglePortInputOperator;
 
 @ApplicationAnnotation(name = "Kafka-to-HDFS-Filter-Transform")
 public class Application implements StreamingApplication
@@ -49,6 +50,8 @@ public class Application implements StreamingApplication
     dag.addStream("filtered", filterOperator.truePort, transform.input);
     dag.addStream("transformed", transform.output, formatter.in);
     dag.addStream("string", formatter.out, fileOutput.input);
+
+    dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
   }
 
 }
