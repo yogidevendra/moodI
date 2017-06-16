@@ -19,23 +19,19 @@
 
 package com.datatorrent.apps;
 
-import java.util.Map;
-
 import org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator;
 import org.apache.hadoop.conf.Configuration;
-
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.contrib.cassandra.CassandraPOJOOutputOperator;
 import com.datatorrent.contrib.cassandra.CassandraTransactionalStore;
-import com.datatorrent.contrib.parser.JsonParser;
-import com.datatorrent.lib.filter.FilterOperator;
-import com.datatorrent.lib.transform.TransformOperator;
+import com.datatorrent.lib.schemaAware.CassandraOutputOperator;
+import com.datatorrent.lib.schemaAware.FilterOperator;
+import com.datatorrent.lib.schemaAware.JsonParser;
+import com.datatorrent.lib.schemaAware.TransformOperator;
 
-@ApplicationAnnotation(name = "Kafka-to-Cassandra-Transform")
+@ApplicationAnnotation(name = "Kafka-to-Cassandra-Filter-Transform")
 public class Application implements StreamingApplication
 {
 
@@ -45,20 +41,17 @@ public class Application implements StreamingApplication
     KafkaSinglePortInputOperator kafkaInputOperator = dag.addOperator("kafkaInput", KafkaSinglePortInputOperator.class);
 
     // Parses a json string tuple against a specified json schema and emits JSONObject.
-    JsonParser jsonParser = dag.addOperator("JsonParser", new JsonParser());
+    JsonParser jsonParser = dag.addOperator("jsonParser", new JsonParser());
 
     // Filters the tuple as per specified condition by user.
     FilterOperator filterOperator = dag.addOperator("filter", new FilterOperator());
 
     // Transforms the tuple value to user logic. Note logic may be modified.
     TransformOperator transform = dag.addOperator("transform", new TransformOperator());
-    Map<String, String> expMap = Maps.newHashMap();
-    expMap.put("name", "{$.name}.toUpperCase()");
-    transform.setExpressionMap(expMap);
 
     // Writes the data or Pojo to Cassandra database.
     CassandraTransactionalStore transactionalStore = new CassandraTransactionalStore();
-    CassandraPOJOOutputOperator cassandraOutputOperator = dag.addOperator("CassandraOutput", new CassandraPOJOOutputOperator());
+    CassandraOutputOperator cassandraOutputOperator = dag.addOperator("cassandraOutput", new CassandraOutputOperator());
     cassandraOutputOperator.setStore(transactionalStore);
 
     // Now create the streams to complete the dag or application logic.
