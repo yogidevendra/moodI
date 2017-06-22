@@ -32,12 +32,12 @@ import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.lib.db.jdbc.JdbcFieldInfo;
-import com.datatorrent.lib.db.jdbc.JdbcPOJOInsertOutputOperator;
-import com.datatorrent.lib.db.jdbc.JdbcPOJOPollInputOperator;
 import com.datatorrent.lib.db.jdbc.JdbcStore;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
 import com.datatorrent.lib.transform.TransformOperator;
 import com.datatorrent.lib.util.FieldInfo;
+import com.datatorrent.moodi.lib.io.db.JdbcPOJOInsertOutputOperator;
+import com.datatorrent.moodi.lib.io.db.JdbcPOJOPollInputOperator;
 
 @ApplicationAnnotation(name="Database-to-Database-Sync")
 public class Application implements StreamingApplication
@@ -71,6 +71,7 @@ public class Application implements StreamingApplication
      */
     dag.addStream("JdbcInput-to-JdbcOutput", jdbcInputOperator.outputPort, jdbcOutputOperator.input);
     dag.setInputPortAttribute(jdbcOutputOperator.input, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
 
     /*
      * To add custom logic to your DAG, add your custom operator here with

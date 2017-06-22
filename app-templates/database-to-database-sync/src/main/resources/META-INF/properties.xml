@@ -73,7 +73,7 @@
 
   <property>
     <name>apex.app-param.whereCondition</name>
-    <value></value>
+    <value>1=1</value>
     <description>Specify WHERE clause for input database. Note if blank value specified, all records would be selected</description>
   </property>
   <property>
@@ -220,6 +220,11 @@
   <property>
     <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
     <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.plugin.stram.plugins</name>
+    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
   </property>
 
 </configuration>

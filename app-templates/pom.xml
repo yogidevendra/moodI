@@ -173,10 +173,16 @@
       <artifactId>metrics-lib-writer</artifactId>
       <version>3.9.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-plugin</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 	
   <modules>
     <!-- Add individual app templates as modules here -->
+    <module>database-to-database-sync</module>
     <module>hdfs-to-hdfs-filter-transform</module>
     <module>hdfs-line-copy</module>
     <module>kafka-to-hdfs-filter-transform</module>

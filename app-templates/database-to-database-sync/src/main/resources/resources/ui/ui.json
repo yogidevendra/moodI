@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "Database to Database Sync App",
+      "file": "Database-to-Database-Sync.dtdashboard",
+      "appNames": ["Database-to-Database-Sync"]
+    }
+  ]
+}
