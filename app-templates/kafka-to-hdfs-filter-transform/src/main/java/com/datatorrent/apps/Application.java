@@ -29,7 +29,7 @@ import com.datatorrent.lib.schemaAware.FilterOperator;
 import com.datatorrent.lib.schemaAware.JsonFormatter;
 import com.datatorrent.lib.schemaAware.JsonParser;
 import com.datatorrent.lib.schemaAware.TransformOperator;
-import com.datatorrent.moodi.StringFileOutputOperator;
+import com.datatorrent.moodi.io.fs.StringFileOutputOperator;
 import com.datatorrent.moodi.kafka.KafkaSinglePortInputOperator;
 
 @ApplicationAnnotation(name = "Kafka-to-HDFS-Filter-Transform")
