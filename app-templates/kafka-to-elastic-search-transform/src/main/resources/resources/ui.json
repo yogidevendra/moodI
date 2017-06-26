@@ -1,0 +1,10 @@
+{
+  "dashboards": [
+    {
+      "name": "Kafka To Elastic Search Transform App",
+      "file": "kafka-to-elastic-search-transform.dtdashboard",
+      "appNames": ["KafkaToElasticSearch"]
+    }
+  ]
+}
+

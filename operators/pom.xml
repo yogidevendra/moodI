@@ -9,7 +9,6 @@
   <artifactId>moodi-operators</artifactId>
   <packaging>pom</packaging>
   <name>moodi-operators</name>
-  
   <dependencies>
    <!-- Add dependencies here -->
   </dependencies>

@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<configuration>
+  <!-- 
+  <property>
+    <name>dt.application.{appName}.operator.{opName}.prop.{propName}</name>
+    <value>some-default-value (if value is not specified, it is required from the user or custom config when launching)</value>
+  </property>
+  -->
+
+  <property>
+    <name>apex.app-param.kafkaBrokerList</name>
+    <description>Specify Kafka Broker(s) list. E.g: broker1.com:9092, broker2.com:9093, broker3.com:9094</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.clusters</name>
+    <value>${apex.app-param.kafkaBrokerList}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.kafkaInputTopicName</name>
+    <description>Specify topic name of Kafka. E.g: transactions</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.topics</name>
+    <value>${apex.app-param.kafkaInputTopicName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.initialOffsetOfTopicForKafkaConsumer</name>
+    <value>APPLICATION_OR_LATEST</value>
+    <description>Specify initial offset from the position where Kafka consumer starts reading messages. E.g: LATEST</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaInput.prop.initialOffset</name>
+    <value>${apex.app-param.initialOffsetOfTopicForKafkaConsumer}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.FilterConditionForTuples</name>
+    <description>Specify the filter condition for tuples. E.g: ({$}.getAmount() >= 20000)</description>
+  </property>
+  <property>
+    <name>dt.operator.filter.prop.condition</name>
+    <value>${apex.app-param.FilterConditionForTuples}</value>
+  </property>
+
+  <!-- Mandatory Properties for Elastic Search Output Operator. -->
+  <property>
+    <name>apex.app-param.ElasticStoreHostnames</name>
+    <description>Specify the hostname for elastic search store. Eg: hostname1.com:9300,hostname2.com:9300</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.store.hostNames</name>
+    <value>${apex.app-param.ElasticStoreHostnames}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.ElasticStoreClusterName</name>
+    <description>Specify cluster name on elastic search store.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.store.clusterName</name>
+    <value>${apex.app-param.ElasticStoreClusterName}</value>
+  </property>
+
+  <!-- Optional properties for Elastic Search operator. -->
+  <property>
+    <name>apex.app-param.indexName</name>
+    <description>Specify the index name for elastic store.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.indexName</name>
+    <value>${apex.app-param.indexName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.batchSizeForBulk</name>
+    <value>1000</value>
+    <description>Specify the batchsize for bulk in elastic store.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.batchSize</name>
+    <value>${apex.app-param.batchSizeForBulk}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.concurrentRequestsForBulk</name>
+    <value>1</value>
+    <description>Specify the concurrent request to be processed at a given time.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.concurrentRequests</name>
+    <value>${apex.app-param.concurrentRequestsForBulk}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.backoffPolicyRetryCount</name>
+    <value>1</value>
+    <description>Specify the backoff policy retry count.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.backoffPolicyRetryCount</name>
+    <value>${apex.app-param.backoffPolicyRetryCount}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.backoffPolicyRetryTimeInMSecs</name>
+    <value>100</value>
+    <description>Specify the backoff policy retry time in milliseconds.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.backoffPolicyRetryTimeInMSecs</name>
+    <value>${apex.app-param.backoffPolicyRetryTimeInMSecs}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.bulkRequestTimeoutInSecs</name>
+    <value>240</value>
+    <description>Specify the bulk request timeout in seconds.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.bulkRequestTimeoutInSecs</name>
+    <value>${apex.app-param.bulkRequestTimeoutInSecs}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.bulkRequestBatchSizeInMb</name>
+    <value>5</value>
+    <description>Specify the batch size in MB for bulk request.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.bulkRequestBatchSizeInMb</name>
+    <value>${apex.app-param.bulkRequestBatchSizeInMb}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.checkClusterStatusPeriodically</name>
+    <value>false</value>
+    <description>Specify the value for checking cluster and index status after every window cycle.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.checkClusterStatus</name>
+    <value>${apex.app-param.checkClusterStatusPeriodically}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.flushAfterWindowCompletion</name>
+    <value>true</value>
+    <description>Specify the value which decides to flush the bulk request every window. This is default behaviour.</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.flushAfterWindowCompletion</name>
+    <value>${apex.app-param.flushAfterWindowCompletion}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.JsonParserFieldInfo</name>
+    <description>Specify fields and their data types in Json Format. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g {"adId":"INTEGER","adName":"STRING","bidPrice":"DOUBLE"}</description>
+  </property>
+  <property>
+    <name>dt.operator.JsonParser.prop.fieldInfo</name>
+    <value>${apex.app-param.JsonParserFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
+  </property>
+  <property>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
+  </property>
+
+  <property>
+    <name>apex.plugin.dag.setup</name>
+    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
+  </property>
+
+  <property>
+    <name>apex.plugin.stram.plugins</name>
+    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
+  </property>
+</configuration>
+

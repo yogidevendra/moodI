@@ -1,0 +1,2919 @@
+{
+    "config": {
+        "applications": [
+            {
+                "name": "KafkaToElasticSearch",
+                "user": "deepak"
+            }
+        ],
+        "state": {
+            "widgets": [
+                {
+                    "dataModelOptions": {
+                        "allowFetchData": true,
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "time",
+                                    "appUser",
+                                    "appName",
+                                    "logicalOperatorName",
+                                    "totalEventsWritten:SUM",
+                                    "totalBadEvents:SUM",
+                                    "totalBadEvents:MIN",
+                                    "totalBadEvents:MAX",
+                                    "totalBadEvents:COUNT",
+                                    "totalBadEvents:FIRST",
+                                    "totalBadEvents:LAST",
+                                    "totalBadEvents:AVG"
+                                ],
+                                "incompleteResultOK": true,
+                                "keys": {
+                                    "appName": [
+                                        "KafkaToElasticSearch"
+                                    ],
+                                    "appUser": [
+                                        "deepak"
+                                    ],
+                                    "logicalOperatorName": [
+                                        "ElasticStore"
+                                    ]
+                                },
+                                "time": {
+                                    "bucket": "1m",
+                                    "latestNumBuckets": "10"
+                                }
+                            },
+                            "dimensionId": "0",
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true,
+                            "rangeType": "latestNumBuckets"
+                        },
+                        "dataSource": {
+                            "appName": "KafkaToElasticSearch",
+                            "appPackageSource": {
+                                "appName": "KafkaToElasticSearch",
+                                "name": "kafka-to-elastic-transform",
+                                "user": "deepak",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "deepak",
+                            "context": {
+                                "keys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "ElasticStore"
+                                }
+                            },
+                            "displayName": "[HISTORICAL] OperatorMetrics(ElasticStore)  (user: deepak; app: KafkaToElasticSearch)",
+                            "name": "[HISTORICAL] OperatorMetrics(ElasticStore) ",
+                            "query": {
+                                "operatorName": "DTMetricsHistQuery",
+                                "topic": "DTMetricsHistQuery",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsHistResult",
+                                "topic": "DTMetricsHistResult",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "keysRequiringValues": [],
+                        "loadingData": false,
+                        "schema": {
+                            "currentValues": [
+                                {
+                                    "name": "totalEventsWritten:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalEventsWritten:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents:AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "dimensions": [
+                                {
+                                    "additionalValues": [
+                                        {
+                                            "name": "totalEventsWritten:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalEventsWritten:AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadBytesWritten:AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytesWritten:AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBadEvents:AVG",
+                                            "type": "long"
+                                        }
+                                    ],
+                                    "combination": [
+                                        "appName",
+                                        "appUser",
+                                        "logicalOperatorName"
+                                    ],
+                                    "id": "0",
+                                    "label": "appName, appUser, logicalOperatorName",
+                                    "valueFields": [
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:SUM",
+                                            "key": "totalEventsWritten:SUM",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:MIN",
+                                            "key": "totalEventsWritten:MIN",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:MAX",
+                                            "key": "totalEventsWritten:MAX",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:COUNT",
+                                            "key": "totalEventsWritten:COUNT",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:FIRST",
+                                            "key": "totalEventsWritten:FIRST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:LAST",
+                                            "key": "totalEventsWritten:LAST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalEventsWritten",
+                                            "filter": "number",
+                                            "id": "totalEventsWritten:AVG",
+                                            "key": "totalEventsWritten:AVG",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:SUM",
+                                            "key": "totalBadBytesWritten:SUM",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:MIN",
+                                            "key": "totalBadBytesWritten:MIN",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:MAX",
+                                            "key": "totalBadBytesWritten:MAX",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:COUNT",
+                                            "key": "totalBadBytesWritten:COUNT",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:FIRST",
+                                            "key": "totalBadBytesWritten:FIRST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:LAST",
+                                            "key": "totalBadBytesWritten:LAST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBadBytesWritten:AVG",
+                                            "key": "totalBadBytesWritten:AVG",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:SUM",
+                                            "key": "totalBytesWritten:SUM",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:MIN",
+                                            "key": "totalBytesWritten:MIN",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:MAX",
+                                            "key": "totalBytesWritten:MAX",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:COUNT",
+                                            "key": "totalBytesWritten:COUNT",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:FIRST",
+                                            "key": "totalBytesWritten:FIRST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:LAST",
+                                            "key": "totalBytesWritten:LAST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytesWritten",
+                                            "filter": "number",
+                                            "id": "totalBytesWritten:AVG",
+                                            "key": "totalBytesWritten:AVG",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:SUM",
+                                            "key": "totalBadEvents:SUM",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:MIN",
+                                            "key": "totalBadEvents:MIN",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:MAX",
+                                            "key": "totalBadEvents:MAX",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:COUNT",
+                                            "key": "totalBadEvents:COUNT",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:FIRST",
+                                            "key": "totalBadEvents:FIRST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:LAST",
+                                            "key": "totalBadEvents:LAST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBadEvents",
+                                            "filter": "number",
+                                            "id": "totalBadEvents:AVG",
+                                            "key": "totalBadEvents:AVG",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "fieldsAllDimensions": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:SUM",
+                                    "key": "totalEventsWritten:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:MIN",
+                                    "key": "totalEventsWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:MAX",
+                                    "key": "totalEventsWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:COUNT",
+                                    "key": "totalEventsWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:FIRST",
+                                    "key": "totalEventsWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:LAST",
+                                    "key": "totalEventsWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:AVG",
+                                    "key": "totalEventsWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:SUM",
+                                    "key": "totalBadBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:MIN",
+                                    "key": "totalBadBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:MAX",
+                                    "key": "totalBadBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:COUNT",
+                                    "key": "totalBadBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:FIRST",
+                                    "key": "totalBadBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:LAST",
+                                    "key": "totalBadBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:AVG",
+                                    "key": "totalBadBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:SUM",
+                                    "key": "totalBadEvents:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:MIN",
+                                    "key": "totalBadEvents:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:MAX",
+                                    "key": "totalBadEvents:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:COUNT",
+                                    "key": "totalBadEvents:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:FIRST",
+                                    "key": "totalBadEvents:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:LAST",
+                                    "key": "totalBadEvents:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:AVG",
+                                    "key": "totalBadEvents:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "keyFields": [
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "keys": [
+                                {
+                                    "enumValues": [
+                                        "deepak"
+                                    ],
+                                    "name": "appUser",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "KafkaToElasticSearch"
+                                    ],
+                                    "name": "appName",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "ElasticStore"
+                                    ],
+                                    "name": "logicalOperatorName",
+                                    "type": "string"
+                                }
+                            ],
+                            "schemaType": "dimensions",
+                            "schemaVersion": "1.0",
+                            "time": {
+                                "buckets": [
+                                    "1m",
+                                    "1h",
+                                    "1d"
+                                ],
+                                "slidingAggregateSupported": true
+                            },
+                            "timeFields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                }
+                            ],
+                            "valueFields": [],
+                            "valueFieldsAllDimensions": [
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:SUM",
+                                    "key": "totalEventsWritten:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:MIN",
+                                    "key": "totalEventsWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:MAX",
+                                    "key": "totalEventsWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:COUNT",
+                                    "key": "totalEventsWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:FIRST",
+                                    "key": "totalEventsWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:LAST",
+                                    "key": "totalEventsWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalEventsWritten",
+                                    "filter": "number",
+                                    "id": "totalEventsWritten:AVG",
+                                    "key": "totalEventsWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:SUM",
+                                    "key": "totalBadBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:MIN",
+                                    "key": "totalBadBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:MAX",
+                                    "key": "totalBadBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:COUNT",
+                                    "key": "totalBadBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:FIRST",
+                                    "key": "totalBadBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:LAST",
+                                    "key": "totalBadBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBadBytesWritten:AVG",
+                                    "key": "totalBadBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:SUM",
+                                    "key": "totalBadEvents:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:MIN",
+                                    "key": "totalBadEvents:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:MAX",
+                                    "key": "totalBadEvents:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:COUNT",
+                                    "key": "totalBadEvents:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:FIRST",
+                                    "key": "totalBadEvents:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:LAST",
+                                    "key": "totalBadEvents:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBadEvents",
+                                    "filter": "number",
+                                    "id": "totalBadEvents:AVG",
+                                    "key": "totalBadEvents:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "values": []
+                        },
+                        "tags": {
+                            "multiKeySelect": true
+                        }
+                    },
+                    "name": "line chart",
+                    "size": {
+                        "contentOverflow": "hidden",
+                        "minHeight": "300px",
+                        "minWidth": "500px",
+                        "width": "50%"
+                    },
+                    "style": {},
+                    "title": "Line Chart"
+                },
+                {
+                    "dataModelOptions": {
+                        "allowFetchData": true,
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "time",
+                                    "appUser",
+                                    "appName",
+                                    "logicalOperatorName",
+                                    "numBytes:SUM",
+                                    "totalBytes:SUM",
+                                    "totalBytes:MIN",
+                                    "totalBytes:MAX",
+                                    "totalBytes:COUNT",
+                                    "totalBytes:FIRST",
+                                    "totalBytes:LAST",
+                                    "totalBytes:AVG",
+                                    "numMessages:MIN",
+                                    "numMessages:MAX",
+                                    "numMessages:COUNT",
+                                    "numMessages:FIRST",
+                                    "numMessages:LAST",
+                                    "numMessages:AVG"
+                                ],
+                                "incompleteResultOK": true,
+                                "keys": {
+                                    "appName": [
+                                        "KafkaToElasticSearch"
+                                    ],
+                                    "appUser": [
+                                        "deepak"
+                                    ],
+                                    "logicalOperatorName": [
+                                        "kafkaInput"
+                                    ]
+                                },
+                                "time": {
+                                    "bucket": "1m",
+                                    "latestNumBuckets": "10"
+                                }
+                            },
+                            "dimensionId": "0",
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true,
+                            "rangeType": "latestNumBuckets"
+                        },
+                        "dataSource": {
+                            "appName": "KafkaToElasticSearch",
+                            "appPackageSource": {
+                                "appName": "KafkaToElasticSearch",
+                                "name": "kafka-to-elastic-transform",
+                                "user": "deepak",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "deepak",
+                            "context": {
+                                "keys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "kafkaInput"
+                                }
+                            },
+                            "displayName": "[HISTORICAL] OperatorMetrics(kafkaInput)  (user: deepak; app: KafkaToElasticSearch)",
+                            "name": "[HISTORICAL] OperatorMetrics(kafkaInput) ",
+                            "query": {
+                                "operatorName": "DTMetricsHistQuery",
+                                "topic": "DTMetricsHistQuery",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsHistResult",
+                                "topic": "DTMetricsHistResult",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "keysRequiringValues": [],
+                        "loadingData": false,
+                        "schema": {
+                            "currentValues": [
+                                {
+                                    "name": "numBytes:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numBytes:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages:AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "dimensions": [
+                                {
+                                    "additionalValues": [
+                                        {
+                                            "name": "numBytes:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numBytes:AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "totalBytes:AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "name": "numMessages:AVG",
+                                            "type": "long"
+                                        }
+                                    ],
+                                    "combination": [
+                                        "appName",
+                                        "appUser",
+                                        "logicalOperatorName"
+                                    ],
+                                    "id": "0",
+                                    "label": "appName, appUser, logicalOperatorName",
+                                    "valueFields": [
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:SUM",
+                                            "key": "numBytes:SUM",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:MIN",
+                                            "key": "numBytes:MIN",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:MAX",
+                                            "key": "numBytes:MAX",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:COUNT",
+                                            "key": "numBytes:COUNT",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:FIRST",
+                                            "key": "numBytes:FIRST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:LAST",
+                                            "key": "numBytes:LAST",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numBytes",
+                                            "filter": "number",
+                                            "id": "numBytes:AVG",
+                                            "key": "numBytes:AVG",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:SUM",
+                                            "key": "totalBytes:SUM",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:MIN",
+                                            "key": "totalBytes:MIN",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:MAX",
+                                            "key": "totalBytes:MAX",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:COUNT",
+                                            "key": "totalBytes:COUNT",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:FIRST",
+                                            "key": "totalBytes:FIRST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:LAST",
+                                            "key": "totalBytes:LAST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "totalBytes",
+                                            "filter": "number",
+                                            "id": "totalBytes:AVG",
+                                            "key": "totalBytes:AVG",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:SUM",
+                                            "key": "numMessages:SUM",
+                                            "selected": false,
+                                            "sort": "number",
+                                            "subcategory": "SUM",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:MIN",
+                                            "key": "numMessages:MIN",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MIN",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:MAX",
+                                            "key": "numMessages:MAX",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "MAX",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:COUNT",
+                                            "key": "numMessages:COUNT",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "COUNT",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:FIRST",
+                                            "key": "numMessages:FIRST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "FIRST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:LAST",
+                                            "key": "numMessages:LAST",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "LAST",
+                                            "type": "long"
+                                        },
+                                        {
+                                            "category": "numMessages",
+                                            "filter": "number",
+                                            "id": "numMessages:AVG",
+                                            "key": "numMessages:AVG",
+                                            "selected": true,
+                                            "sort": "number",
+                                            "subcategory": "AVG",
+                                            "type": "long"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "fieldsAllDimensions": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:SUM",
+                                    "key": "numBytes:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:MIN",
+                                    "key": "numBytes:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:MAX",
+                                    "key": "numBytes:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:COUNT",
+                                    "key": "numBytes:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:FIRST",
+                                    "key": "numBytes:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:LAST",
+                                    "key": "numBytes:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:AVG",
+                                    "key": "numBytes:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:SUM",
+                                    "key": "totalBytes:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:MIN",
+                                    "key": "totalBytes:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:MAX",
+                                    "key": "totalBytes:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:COUNT",
+                                    "key": "totalBytes:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:FIRST",
+                                    "key": "totalBytes:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:LAST",
+                                    "key": "totalBytes:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:AVG",
+                                    "key": "totalBytes:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:SUM",
+                                    "key": "numMessages:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:MIN",
+                                    "key": "numMessages:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:MAX",
+                                    "key": "numMessages:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:COUNT",
+                                    "key": "numMessages:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:FIRST",
+                                    "key": "numMessages:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:LAST",
+                                    "key": "numMessages:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:AVG",
+                                    "key": "numMessages:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "keyFields": [
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "keys": [
+                                {
+                                    "enumValues": [
+                                        "deepak"
+                                    ],
+                                    "name": "appUser",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "KafkaToElasticSearch"
+                                    ],
+                                    "name": "appName",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "kafkaInput"
+                                    ],
+                                    "name": "logicalOperatorName",
+                                    "type": "string"
+                                }
+                            ],
+                            "schemaType": "dimensions",
+                            "schemaVersion": "1.0",
+                            "time": {
+                                "buckets": [
+                                    "1m",
+                                    "1h",
+                                    "1d"
+                                ],
+                                "slidingAggregateSupported": true
+                            },
+                            "timeFields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'",
+                                    "sort": "number",
+                                    "type": "date"
+                                }
+                            ],
+                            "valueFields": [],
+                            "valueFieldsAllDimensions": [
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:SUM",
+                                    "key": "numBytes:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:MIN",
+                                    "key": "numBytes:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:MAX",
+                                    "key": "numBytes:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:COUNT",
+                                    "key": "numBytes:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:FIRST",
+                                    "key": "numBytes:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:LAST",
+                                    "key": "numBytes:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numBytes",
+                                    "filter": "number",
+                                    "id": "numBytes:AVG",
+                                    "key": "numBytes:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:SUM",
+                                    "key": "totalBytes:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:MIN",
+                                    "key": "totalBytes:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:MAX",
+                                    "key": "totalBytes:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:COUNT",
+                                    "key": "totalBytes:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:FIRST",
+                                    "key": "totalBytes:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:LAST",
+                                    "key": "totalBytes:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytes",
+                                    "filter": "number",
+                                    "id": "totalBytes:AVG",
+                                    "key": "totalBytes:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:SUM",
+                                    "key": "numMessages:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:MIN",
+                                    "key": "numMessages:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:MAX",
+                                    "key": "numMessages:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:COUNT",
+                                    "key": "numMessages:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:FIRST",
+                                    "key": "numMessages:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:LAST",
+                                    "key": "numMessages:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "numMessages",
+                                    "filter": "number",
+                                    "id": "numMessages:AVG",
+                                    "key": "numMessages:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "values": []
+                        },
+                        "tags": {
+                            "multiKeySelect": true
+                        }
+                    },
+                    "name": "line chart",
+                    "size": {
+                        "contentOverflow": "hidden",
+                        "minHeight": "300px",
+                        "minWidth": "500px",
+                        "width": "50%"
+                    },
+                    "style": {},
+                    "title": "Line Chart"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "keyField": "numBytes",
+                            "valueField": "numMessages",
+                            "valueFields": [
+                                "numBytes",
+                                "totalBytes",
+                                "numMessages"
+                            ]
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "numBytes",
+                                    "totalBytes",
+                                    "numMessages"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "kafkaInput"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "KafkaToElasticSearch",
+                            "appPackageSource": {
+                                "appName": "KafkaToElasticSearch",
+                                "name": "kafka-to-elastic-transform",
+                                "user": "deepak",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "deepak",
+                            "context": {
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "kafkaInput"
+                                }
+                            },
+                            "displayName": "[REALTIME] OperatorMetric(kafkaInput)  (user: deepak; app: KafkaToElasticSearch)",
+                            "name": "[REALTIME] OperatorMetric(kafkaInput) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery",
+                                "topic": "DTMetricsQuery",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult",
+                                "topic": "DTMetricsResult",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "numBytes",
+                                    "key": "numBytes",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBytes",
+                                    "key": "totalBytes",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "numMessages",
+                                    "key": "numMessages",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "KafkaToElasticSearch",
+                                "appUser": "deepak",
+                                "logicalOperatorName": "kafkaInput"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "numBytes",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytes",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "numMessages",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "numBytes",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "width": "15%"
+                    },
+                    "style": {},
+                    "title": "Single Value"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "keyField": "totalEventsWritten",
+                            "valueField": "totalEventsWritten",
+                            "valueFields": [
+                                "totalEventsWritten",
+                                "totalBadBytesWritten",
+                                "totalBytesWritten",
+                                "totalBadEvents"
+                            ]
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "totalEventsWritten",
+                                    "totalBadBytesWritten",
+                                    "totalBytesWritten",
+                                    "totalBadEvents"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "ElasticStore"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "KafkaToElasticSearch",
+                            "appPackageSource": {
+                                "appName": "KafkaToElasticSearch",
+                                "name": "kafka-to-elastic-transform",
+                                "user": "deepak",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "deepak",
+                            "context": {
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "ElasticStore"
+                                }
+                            },
+                            "displayName": "[REALTIME] OperatorMetric(ElasticStore)  (user: deepak; app: KafkaToElasticSearch)",
+                            "name": "[REALTIME] OperatorMetric(ElasticStore) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery",
+                                "topic": "DTMetricsQuery",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult",
+                                "topic": "DTMetricsResult",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "totalEventsWritten",
+                                    "key": "totalEventsWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBadBytesWritten",
+                                    "key": "totalBadBytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBytesWritten",
+                                    "key": "totalBytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBadEvents",
+                                    "key": "totalBadEvents",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "KafkaToElasticSearch",
+                                "appUser": "deepak",
+                                "logicalOperatorName": "ElasticStore"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "totalEventsWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "totalEventsWritten",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "width": "15%"
+                    },
+                    "style": {},
+                    "title": "Single Value"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "keyField": "totalEventsWritten",
+                            "valueField": "totalBytesWritten",
+                            "valueFields": [
+                                "totalEventsWritten",
+                                "totalBadBytesWritten",
+                                "totalBytesWritten",
+                                "totalBadEvents"
+                            ]
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "totalEventsWritten",
+                                    "totalBadBytesWritten",
+                                    "totalBytesWritten",
+                                    "totalBadEvents"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "ElasticStore"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "KafkaToElasticSearch",
+                            "appPackageSource": {
+                                "appName": "KafkaToElasticSearch",
+                                "name": "kafka-to-elastic-transform",
+                                "user": "deepak",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "deepak",
+                            "context": {
+                                "schemaKeys": {
+                                    "appName": "KafkaToElasticSearch",
+                                    "appUser": "deepak",
+                                    "logicalOperatorName": "ElasticStore"
+                                }
+                            },
+                            "displayName": "[REALTIME] OperatorMetric(ElasticStore)  (user: deepak; app: KafkaToElasticSearch)",
+                            "name": "[REALTIME] OperatorMetric(ElasticStore) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery",
+                                "topic": "DTMetricsQuery",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult",
+                                "topic": "DTMetricsResult",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "totalEventsWritten",
+                                    "key": "totalEventsWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBadBytesWritten",
+                                    "key": "totalBadBytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBytesWritten",
+                                    "key": "totalBytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBadEvents",
+                                    "key": "totalBadEvents",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "KafkaToElasticSearch",
+                                "appUser": "deepak",
+                                "logicalOperatorName": "ElasticStore"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "totalEventsWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadBytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBadEvents",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "totalEventsWritten",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "width": "15%"
+                    },
+                    "style": {},
+                    "title": "Single Value"
+                }
+            ]
+        }
+    },
+    "description": "automatically generated dashboard",
+    "id": "deepak:KafkaToElasticSearch",
+    "mtime": "2017-06-27T06:41:40.231Z",
+    "name": "KafkaToElasticSearch",
+    "user": "deepak"
+}
