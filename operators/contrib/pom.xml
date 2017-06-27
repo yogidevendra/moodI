@@ -22,5 +22,6 @@
   <modules>
     <module>aws-connectors</module>
     <module>kafka</module>
+    <module>image</module>
   </modules>
 </project>
