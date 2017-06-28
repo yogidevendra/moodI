@@ -8,8 +8,13 @@
   </parent>
   <artifactId>kafka-to-kafka-filter-transform</artifactId>
   <name>Kafka to Kafka  Filter Transform App</name>
-  <version>0.9.0</version>
+  <version>0.10.0</version>
   <description>Ingest data from kafka, process it and write back to kafka.</description>
+
+  <properties>
+    <apex.apppackage.tags>app-template, kafka, filter, process</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+  </properties>
 
   <dependencies>
     <dependency>
