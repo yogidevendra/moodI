@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "Kinesis To Redshift App",
+      "file": "Kinesis-to-Redshift.dtdashboard",
+      "appNames": ["Kinesis-to-Redshift"]
+    }
+  ]
+}

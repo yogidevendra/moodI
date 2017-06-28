@@ -19,13 +19,14 @@
 
 package com.datatorrent.apps;
 
-import org.apache.apex.malhar.lib.db.redshift.RedshiftOutputModule;
 import org.apache.hadoop.conf.Configuration;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.contrib.kinesis.KinesisByteArrayInputOperator;
+import com.datatorrent.moodi.kinesis.KinesisByteArrayInputOperator;
+import com.datatorrent.moodi.lib.db.RedshiftOutputModule;
 
 @ApplicationAnnotation(name="Kinesis-to-Redshift")
 public class Application implements StreamingApplication
@@ -43,6 +44,7 @@ public class Application implements StreamingApplication
     // connect the above operators.
     dag.addStream("KinesisToRedshift", inputOperator.outputPort, jdbcOutputOperator.input);
 
+    dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
     /*
      * To add custom logic to your DAG, add your custom operator here with
      * dag.addOperator api call and connect it in the dag using the dag.addStream
