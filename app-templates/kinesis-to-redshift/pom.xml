@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
+  <parent>
+    <groupId>com.datatorrent.apps</groupId>
+    <artifactId>moodi-app-templates</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
   <groupId>com.datatorrent.apps</groupId>
   <version>0.9.0</version>
   <artifactId>kinesis-to-redshift</artifactId>
@@ -12,11 +18,6 @@
   <description>Ingest records from AWS kinesis streams and writes them to AWS Redshift database.</description>
 
   <properties>
-    <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.5.0</apex.version>
-    <malhar.version>3.8.0-SNAPSHOT</malhar.version>
-    <megh.version>3.6.0-SNAPSHOT</megh.version>
-    <aws.version>1.9.10</aws.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
   </properties>
 
@@ -261,56 +262,9 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.apex</groupId>
-      <artifactId>malhar-library</artifactId>
-      <version>${malhar.version}</version>
-      <exclusions>
-      <exclusion>
-        <groupId>*</groupId>
-        <artifactId>*</artifactId>
-      </exclusion>
-    </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>dt-library</artifactId>
-      <version>${megh.version}</version>
-      <!--
-      If you know that your application does not need transitive dependencies pulled in by dt-library,
-      uncomment the following to reduce the size of your app package.
-      -->
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>malhar-contrib</artifactId>
-      <version>${malhar.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-kinesis</artifactId>
-      <version>${aws.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
       <artifactId>apex-common</artifactId>
       <version>${apex.version}</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>${aws.version}</version>
     </dependency>
     <dependency>
       <groupId>com.amazon.redshift</groupId>
@@ -333,6 +287,21 @@
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
       <version>2.7.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-aws-connectors</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-kinesis</artifactId>
+      <version>1.9.10</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-plugin</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <repositories>

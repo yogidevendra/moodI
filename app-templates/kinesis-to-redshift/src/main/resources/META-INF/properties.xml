@@ -21,7 +21,6 @@
 
   <property>
     <name>apex.app-param.KinesisEndpoint</name>
-    <value>kinesis.us-east-1.amazonaws.com</value>
     <description>Specify AWS Kinesis Endpoint</description>
   </property>
   <property>
@@ -201,6 +200,11 @@
   <property>
     <name>dt.operator.JdbcOutput.prop.readerMode</name>
     <value>${apex.app-param.RedshiftReaderMode}</value>
+  </property>
+
+  <property>
+    <name>apex.plugin.stram.plugins</name>
+    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
   </property>
 
 </configuration>

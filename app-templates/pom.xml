@@ -182,6 +182,7 @@
     <module>kafka-to-kafka-filter-transform</module>
     <module>kafka-to-cassandra-filter-transform</module>
     <module>kinesis-to-s3</module>
-    <!--module>s3-to-redshift</module!-->
+    <module>s3-to-redshift</module>
+    <module>kinesis-to-redshift</module>
   </modules>
 </project>
