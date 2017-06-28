@@ -11,6 +11,11 @@
   <version>0.10.0</version>
   <description>Ingest records from kafka along with transformation and write to cassandra store.</description>
 
+  <properties>
+    <apex.apppackage.tags>app-template, kafka, cassandra, filter, process</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+  </properties>
+
   <dependencies>
     <!-- add your dependencies here -->
     <dependency>
