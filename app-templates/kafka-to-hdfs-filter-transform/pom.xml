@@ -9,7 +9,12 @@
   <name>Kafka to HDFS Filter Transform App</name>
   <version>0.9.0</version>
   <description>Ingest and Transform filtered messages from kafka to hadoop HDFS</description>
-  
+
+  <properties>
+    <apex.apppackage.tags>app-template, kafka, hdfs, filter, process</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.datatorrent</groupId>
