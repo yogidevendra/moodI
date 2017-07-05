@@ -25,19 +25,16 @@ import org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator;
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.contrib.parser.CsvParser;
 import com.datatorrent.lib.db.jdbc.JdbcFieldInfo;
-import com.datatorrent.lib.db.jdbc.JdbcPOJOInsertOutputOperator;
-import com.datatorrent.lib.db.jdbc.JdbcPOJOPollInputOperator;
-import com.datatorrent.lib.db.jdbc.JdbcStore;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
-import com.datatorrent.lib.transform.TransformOperator;
+import com.datatorrent.lib.schemaAware.CsvParser;
+import com.datatorrent.lib.schemaAware.JdbcPOJOInsertOutputOperator;
+import com.datatorrent.lib.schemaAware.TransformOperator;
 import com.datatorrent.lib.util.FieldInfo;
 
 @ApplicationAnnotation(name="Kafka-to-Database-Sync")
@@ -56,7 +53,9 @@ public class Application implements StreamingApplication
      */
     JdbcTransactionalStore outputStore = new JdbcTransactionalStore();
     jdbcOutputOperator.setStore(outputStore);
-    jdbcOutputOperator.setFieldInfos(addFieldInfos());
+
+    // Enable it only if field mapping needs to be changed.
+    // jdbcOutputOperator.setFieldInfos(addFieldInfos());
 
     /*
      * Connecting JDBC operators and using parallel partitioning for input port.
@@ -103,23 +102,25 @@ public class Application implements StreamingApplication
   }
 
   /**
-   * This method can be modified to have field mappings based on used defined
-   * class for inserting to database.
+   * This method can be enabled and modified to have field mappings based on used defined
+   * class for inserting to database. Once you uncomment make sure the field mapping is
+   * specified while creating JdbcFieldInfo.
    */
-  private List<JdbcFieldInfo> addFieldInfos()
-  {
-    List<JdbcFieldInfo> fieldInfos = Lists.newArrayList();
-
-    /*
-     * To use this application with custom schema add field info mapping as shown
-     * on the following line:
-     * fieldInfos.add(new JdbcFieldInfo("DATABASE_COLUMN_NAME", "pojoFieldName", SupportType.DATABASE_COLUMN_TYPE, sqlType));
-     *
-     * Also, update TUPLE_CLASS property from the xml configuration files.
-     */
-    fieldInfos.add(new JdbcFieldInfo("account_no", "accountNumber", FieldInfo.SupportType.INTEGER, 0));
-    fieldInfos.add(new JdbcFieldInfo("name", "name", FieldInfo.SupportType.STRING, 0));
-    fieldInfos.add(new JdbcFieldInfo("amount", "amount", FieldInfo.SupportType.INTEGER, 0));
-    return fieldInfos;
-  }
+  /*
+   * private List<JdbcFieldInfo> addFieldInfos()
+   * {
+   *   List<JdbcFieldInfo> fieldInfos = Lists.newArrayList();
+   *
+   *
+   *   // To use this application with custom schema add field info mapping as shown
+   *   // on the following line:
+   *   // fieldInfos.add(new JdbcFieldInfo("DATABASE_COLUMN_NAME", "pojoFieldName", SupportType.DATABASE_COLUMN_TYPE, sqlType));
+   *   // Also, update TUPLE_CLASS property from the xml configuration files.
+   *
+   *   fieldInfos.add(new JdbcFieldInfo("account_no", "accountNumber", FieldInfo.SupportType.INTEGER, 0));
+   *   fieldInfos.add(new JdbcFieldInfo("name", "name", FieldInfo.SupportType.STRING, 0));
+   *   fieldInfos.add(new JdbcFieldInfo("amount", "amount", FieldInfo.SupportType.INTEGER, 0));
+   *   return fieldInfos;
+   * }
+   */
 }

@@ -185,6 +185,7 @@
     <module>database-to-database-sync</module>
     <module>hdfs-to-hdfs-filter-transform</module>
     <module>hdfs-line-copy</module>
+    <module>kafka-to-database-sync</module>
     <module>kafka-to-hdfs-filter-transform</module>
     <module>kafka-to-kafka-filter-transform</module>
     <module>kafka-to-cassandra-filter-transform</module>

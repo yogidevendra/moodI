@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.datatorrent.apps</groupId>
-  <version>0.9.0</version>
+  <parent>
+    <groupId>com.datatorrent.apps</groupId>
+    <artifactId>moodi-app-templates</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
   <artifactId>kafka-to-database-sync</artifactId>
+  <version>0.10.0</version>
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
@@ -13,9 +17,7 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.6.0</malhar.version>
     <skipTests>true</skipTests>
     <apex.apppackage.tags>app-template, kafka, db, PostgreSQL, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
@@ -363,7 +365,6 @@
       <version>1.6</version>
     </dependency>
 
-    
   </dependencies>
 
 </project>

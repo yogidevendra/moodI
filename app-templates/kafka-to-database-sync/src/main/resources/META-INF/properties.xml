@@ -100,7 +100,7 @@
 
   <property>
     <name>apex.app-param.csvParserSchema</name>
-    <value>{
+    <description>Specify schema for CSV Parser. Eg: {
       "separator": "|",
       "quoteChar": "\"",
       "fields": [
@@ -117,9 +117,7 @@
       "type": "Integer"
       }
       ]
-      }
-    </value>
-    <description>Specify schema for CSV Parser.</description>
+      }</description>
   </property>
   <property>
     <name>dt.operator.csvParser.prop.schema</name>
@@ -127,43 +125,28 @@
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForCsvParserOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for csv parser output.</description>
+    <name>apex.app-param.transformOutputFieldInfo</name>
+    <value>{"accountNumber":"INTEGER","name":"STRING","amount":"INTEGER"}</value>
+    <description>Specify json string with output field name and its data type. Possible values for data types are BOOLEAN,DOUBLE,INTEGER,FLOAT,LONG,SHORT,CHARACTER,STRING,DATE E.g. {"uniqueAdId":"INTEGER","cost":"DOUBLE"}</description>
   </property>
   <property>
-    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForCsvParserOutput}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.tupleClassNameForJdbcOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for jdbc output.</description>
-  </property>
-  <property>
-    <name>dt.operator.JdbcOutput.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForJdbcOutput}</value>
+    <name>dt.operator.transform.prop.outputFieldInfo</name>
+    <value>${apex.app-param.transformOutputFieldInfo}</value>
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForTransformInput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform input.</description>
+    <name>apex.app-param.transformExpressionInfo</name>
+    <value>{"accountNumber":"{$.accountNumber}","name":"{$.name}.toUpperCase()","amount":"{$.amount}"}</value>
+    <description>Specify json string with output field name and expression. E.g. {"uniqueAdId":"{$.adId}","cost":"{$.bidPrice} * 2.0"} </description>
   </property>
   <property>
-    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+    <name>dt.operator.transform.prop.expressionInfo</name>
+    <value>${apex.app-param.transformExpressionInfo}</value>
   </property>
 
   <property>
-    <name>apex.app-param.tupleClassNameForTransformOutput</name>
-    <value>com.datatorrent.apps.PojoEvent</value>
-    <description>Specify tuple class name for transform output.</description>
-  </property>
-  <property>
-    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
-    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+    <name>apex.plugin.dag.setup</name>
+    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
   </property>
 
 </configuration>
