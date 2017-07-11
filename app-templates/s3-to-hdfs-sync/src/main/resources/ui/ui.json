@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "S3 to HDFS Sync App",
+      "file": "S3-to-HDFS-Sync.dtdashboard",
+      "appNames": ["S3-to-HDFS-Sync"]
+    }
+  ]
+}

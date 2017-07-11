@@ -22,9 +22,13 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+  <parent>
+    <groupId>com.datatorrent.apps</groupId>
+    <artifactId>moodi-app-templates</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
   <groupId>com.datatorrent.apps</groupId>
-  <version>0.9.0</version>
+  <version>0.10.0</version>
   <artifactId>s3-to-hdfs-sync</artifactId>
   <packaging>jar</packaging>
 
@@ -36,8 +40,6 @@
     <!-- skip tests by default as they depend on external setup -->
     <skipTests>true</skipTests>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.4.0</apex.version>
-    <malhar.version>3.6.0</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, s3, hdfs, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
@@ -272,11 +274,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.10.73</version>
-    </dependency>
-    <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>apex-common</artifactId>
       <version>${apex.version}</version>
@@ -294,6 +291,17 @@
       <version>${apex.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-aws-connectors</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-plugin</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
+    </dependency>
+
   </dependencies>
 
 </project>

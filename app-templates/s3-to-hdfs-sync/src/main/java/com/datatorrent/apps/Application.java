@@ -21,12 +21,13 @@ package com.datatorrent.apps;
 
 import org.apache.hadoop.conf.Configuration;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.DAG.Locality;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.lib.io.fs.HDFSFileCopyModule;
-import com.datatorrent.lib.io.fs.S3InputModule;
+import com.datatorrent.moodi.io.fs.HDFSFileCopyModule;
+import com.datatorrent.moodi.lib.io.fs.s3.S3InputModule;
 
 /**
  * Simple application illustrating file copy from S3
@@ -46,6 +47,8 @@ public class Application implements StreamingApplication
     dag.addStream("BlocksMetaData", inputModule.blocksMetadataOutput, outputModule.blocksMetadataInput)
         .setLocality(Locality.THREAD_LOCAL);
     dag.addStream("BlocksData", inputModule.messages, outputModule.blockData).setLocality(Locality.THREAD_LOCAL);
+
+    dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
   }
 
 }
