@@ -73,7 +73,7 @@
 
   <property>
     <name>apex.app-param.whereCondition</name>
-    <value>1=1</value>
+    <value></value>
     <description>Specify WHERE clause for input database. Note if blank value specified, all records would be selected</description>
   </property>
   <property>

@@ -20,24 +20,21 @@
 package com.datatorrent.apps;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.lib.db.jdbc.JdbcFieldInfo;
-import com.datatorrent.lib.db.jdbc.JdbcStore;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
-import com.datatorrent.lib.transform.TransformOperator;
 import com.datatorrent.lib.util.FieldInfo;
 import com.datatorrent.moodi.lib.io.db.JdbcPOJOInsertOutputOperator;
 import com.datatorrent.moodi.lib.io.db.JdbcPOJOPollInputOperator;
+import com.datatorrent.moodi.lib.io.db.JdbcStore;
 
 @ApplicationAnnotation(name="Database-to-Database-Sync")
 public class Application implements StreamingApplication

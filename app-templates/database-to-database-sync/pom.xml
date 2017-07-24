@@ -6,13 +6,10 @@
     <artifactId>moodi-app-templates</artifactId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
-  <groupId>com.datatorrent.apps</groupId>
-  <version>0.10.0</version>
   <artifactId>database-to-database-sync</artifactId>
-  <packaging>jar</packaging>
-
-  <!-- change these to the appropriate values -->
   <name>Database to Database Sync App</name>
+  <version>0.10.0</version>
+  <packaging>jar</packaging>
   <description>Ingest messages from a source PostgreSQL Database table to destination PostgreSQL database table.</description>
 
   <properties>
