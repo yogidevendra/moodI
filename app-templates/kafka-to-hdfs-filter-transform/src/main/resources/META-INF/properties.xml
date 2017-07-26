@@ -104,14 +104,6 @@
     <name>dt.operator.fileOutput.prop.outputFileName</name>
     <value>${apex.app-param.outputFileName}</value>
   </property>
-  <property>
-    <name>apex.plugin.stram.plugins</name>
-    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
-  </property>
-  <property>
-    <name>apex.plugin.dag.setup</name>
-    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
-  </property>
 
 </configuration>
 

@@ -87,10 +87,5 @@
     <value>${apex.app-param.numberOfBlocksPerWindow}</value>
   </property>
 
-  <property>
-    <name>apex.plugin.stram.plugins</name>
-    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
-  </property>
-
 </configuration>
 

@@ -21,6 +21,7 @@
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, redshift, kinesis</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <build>

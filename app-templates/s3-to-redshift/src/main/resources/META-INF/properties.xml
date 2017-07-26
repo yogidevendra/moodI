@@ -299,10 +299,5 @@
     <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
   </property>
 
-  <property>
-    <name>apex.plugin.stram.plugins</name>
-    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
-  </property>
-
 </configuration>
 

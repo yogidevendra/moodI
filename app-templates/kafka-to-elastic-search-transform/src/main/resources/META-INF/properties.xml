@@ -180,14 +180,5 @@
     <value>${apex.app-param.transformExpressionInfo}</value>
   </property>
 
-  <property>
-    <name>apex.plugin.dag.setup</name>
-    <value>com.datatorrent.schema.SchemaDAGPlugin</value>
-  </property>
-
-  <property>
-    <name>apex.plugin.stram.plugins</name>
-    <value>com.datatorrent.metrics.plugin.MetricWriterPlugin</value>
-  </property>
 </configuration>
 

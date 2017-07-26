@@ -21,6 +21,8 @@
     <skipTests>true</skipTests>
     <apex.apppackage.tags>app-template, kafka, db, PostgreSQL, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
+
     <!-- skip tests by default as they depend on manual setup -->
     <skipTests>true</skipTests>
   </properties>

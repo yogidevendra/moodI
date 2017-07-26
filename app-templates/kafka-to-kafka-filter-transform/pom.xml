@@ -14,6 +14,7 @@
   <properties>
     <apex.apppackage.tags>app-template, kafka, filter, process</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <dependencies>

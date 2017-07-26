@@ -10,6 +10,12 @@
   <name>HDFS to HDFS Filter Transform App</name>
   <version>0.10.0</version>
   <description>Ingest and backup hadoop HDFS data as lines from one cluster to another in a fault tolerant way.</description>
+  <properties>
+    <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
+    <apex.apppackage.tags>app-template, hdfs, filter, process, transform</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
+  </properties>
 
   <dependencies>
     <dependency>
