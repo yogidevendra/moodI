@@ -1,5 +1,8 @@
-### Description
-The Database to Database Sync Application records from configured source PostgreSQL table and writes them in destination PostgreSQL table. It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records and writes them in destination table.
+## Description
+
+This application demonstrates continuous archival of big data from database tables.
+It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records and writes them in destination table.
+
 - The application scales linearly with the number of poller partitions.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
@@ -7,48 +10,42 @@ The Database to Database Sync Application records from configured source Postgre
 - The only configuration user needs to provide is source database connection details, table.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Import the application from DataTorrent AppHub and launch it to ingest your data from your PostgreSQL table and insert into output PostgreSQL table. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+## Implementation details
 
-### Tested with external sources
-- Input Source:- PostgreSQL (version: 9.4.10)
-- Output Source:- PostgreSQL (version: 9.4.10)
+- Logical flow diagram
 
-### Quickstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=EEvRMALP1nk) to import and launch the application.
+   ![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_DAG.png)
+- It uses following operators
+  - JDBC POJO Poll Input operator
+  - JDBC POJO Insert output operator
+- Supported data source
+  - PostgreSQL version: 9.4
+  - Tested with PostgreSQL client library: org.postgresql:postgresql:9.4.1208.jre7
+- Supported sinks
+  - PostgreSQL version: 9.4
+  - Tested with PostgreSQL client library: org.postgresql:postgresql:9.4.1208.jre7
 
-<iframe src="https://www.youtube.com/embed/EEvRMALP1nk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+## Supported visualizations
 
-### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=yktB0ZX43mM) to add custom logic to the application template.
+  | Description  | Widget   |
+  |---|---|
+  | Events read per minute from Source Database  | Line chart|
+  | Events written per minute to Sink Database | Line chart |
 
-<iframe src="https://www.youtube.com/embed/yktB0ZX43mM?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+## Resources
 
-### Logical Plan
+  - Detailed documentation for this app-template is available at :
 
-Here is a preview of the logical plan of the application template
+     <a
+       href="http://docs.datatorrent.com/app-templates/0.10.0/database-to-database-sync/"  class="docs" id="docs" ga-track="docs"
+       target="_blank">http://docs.datatorrent.com/app-templates/0.10.0/database-to-database-sync/</a>
+  - Source code for this app-template is available at :
 
-![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_DAG.png)
+      <a
+       href="https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync</a>
 
-### Launch App Properties
+  - Please send feedback or feature requests to :
+      <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
-Here is a preview of the properties to be set at application launch
-
-![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_properties.png)
-
-### Resources
-
-Please find the walkthrough docs for app template as follows:
-
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-database-sync/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-database-sync/</a>
-
-Please find the GitHub URL for app template as follows:
-
-&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/database-to-database-sync</a>
-
-Please send feedback or feature requests to:
-
-&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
-
-Please join the user discussion groups:
-
-&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+  - Join our user discussion group at :
+      <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
