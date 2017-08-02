@@ -25,10 +25,12 @@ import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
+import com.datatorrent.lib.io.ConsoleOutputOperator;
 import com.datatorrent.lib.schemaAware.FilterOperator;
 import com.datatorrent.lib.schemaAware.JsonFormatter;
 import com.datatorrent.lib.schemaAware.JsonParser;
 import com.datatorrent.lib.schemaAware.TransformOperator;
+import com.datatorrent.lib.stream.Counter;
 import com.datatorrent.moodi.io.fs.StringFileOutputOperator;
 import com.datatorrent.moodi.kafka.KafkaSinglePortInputOperator;
 
@@ -52,6 +54,11 @@ public class Application implements StreamingApplication
     dag.addStream("string", formatter.out, fileOutput.input);
 
     dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
+
+    Counter counter = dag.addOperator("counter", Counter.class);
+    ConsoleOutputOperator console = dag.addOperator("console", ConsoleOutputOperator.class);
+    dag.addStream("FilteredOut", filterOperator.falsePort, counter.input);
+    dag.addStream("FilteredOutToConsole", counter.output, console.input);
   }
 
 }

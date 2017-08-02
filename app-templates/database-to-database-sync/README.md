@@ -1,4 +1,6 @@
 ### Description
+
+This application demonstrates 
 The Database to Database Sync Application records from configured source PostgreSQL table and writes them in destination PostgreSQL table. It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records and writes them in destination table.
 - The application scales linearly with the number of poller partitions.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
