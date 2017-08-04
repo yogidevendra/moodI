@@ -72,6 +72,25 @@
 
   <!-- Optional properties for Elastic Search operator. -->
   <property>
+    <name>apex.app-param.EnableDocumentUpdate</name>
+    <description>Enable updating existing document if new document with same id is stored. Default : false</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.update</name>
+    <value>${apex.app-param.EnableDocumentUpdate}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.FieldToConsiderAsDocId</name>
+    <description>The field in the json document that should be considered as the _id. Mandatory Field when update ==
+      true. Default : hashcode of tuple</description>
+  </property>
+  <property>
+    <name>dt.operator.ElasticStore.prop.docIdField</name>
+    <value>${apex.app-param.FieldToConsiderAsDocId}</value>
+  </property>
+
+  <property>
     <name>apex.app-param.indexName</name>
     <description>Specify the index name for elastic store.</description>
   </property>
