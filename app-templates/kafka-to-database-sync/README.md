@@ -1,4 +1,8 @@
-### Description
+
+## Description
+
+The Kafka to Database sync application template demonstrates continuous big data sync from a source to destination while reading data messages from a configured Kafka topic. This could be easily utilized and extended by any developer to create a fast,  fault tolerant and scalable Big Data Sync or Retention Application to serve business with continuous data.
+
 The Kafka to Database Sync Application ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. This application uses PoJoEvent as an example schema, this can be customized to use custom schema based on specific needs.
 
 - The application scales linearly with the number of poller partitions.
@@ -8,48 +12,34 @@ The Kafka to Database Sync Application ingest string messages seperated by '|' f
 - The only configuration user needs to provide is source kafka broker lists and database connection details, table.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Import the application from DataTorrent AppHub and launch it to ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Import the application from DataTorrent AppFactory and launch it to ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. Please follow the walkthrough document below to understand the configurable properties. Moreover, one could easily add customized business logic to further process the data during sync.
 
-### Tested with external sources
-- Input Source:- Kafka (version: 0.9)
-- Output Source:- PostgreSQL (version: 9.4.10)
+## Implementation details
+- Logical flow diagram
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/08/kafka-to-database-sync-dag.png)
 
-### Quickstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=u8mbUrcsYOk) to import and launch the application.
+- It uses following operators
+  - KafkaSinglePortInputOperator Input operator (Read from source Kafka Cluster)
+  - CsvParser Operator (Delimited Parser)
+  - JdbcPOJOInsertOutputOperator Output Operator (Write to PostgreSQL)
+- Supported data source
+  - Apache Kafka version 0.9.0.x
+  - Tested with kafka client library: org.apache.kafka:kafka_2.11:0.9.0.1
+- Supported sinks
+  - PostgreSQL version: 9.4
+  - Tested with PostgreSQL client library: org.postgresql:postgresql:9.4.1208.jre7
 
-<iframe src="https://www.youtube.com/embed/u8mbUrcsYOk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
-### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=iEwDGNrqaOo) to add custom logic to the application template.
+## Resources
 
-<iframe src="https://www.youtube.com/embed/iEwDGNrqaOo?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+  - Detailed documentation for this application template is available at:   
+    [http://docs.datatorrent.com/app-templates/0.10.0/kafka-to-database-sync](http://docs.datatorrent.com/app-templates/0.10.0/kafka-to-database-sync)
 
-### Logical Plan
+  - Source code for this app-template is available at:  
+    [https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-database-sync](https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-database-sync)
 
-Here is a preview of the logical plan of the application template
+  - Please send feedback or feature requests to:
+      <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
-![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_db_sync_DAG.png)
-
-### Launch App Properties
-
-Here is a preview of the properties to be set at application launch
-
-![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_db_sync_properties.png)
-
-### Resources
-
-Please find the walkthrough docs for app template as follows:
-
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/kafka-to-database-sync"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/kafka-to-database-sync</a>
-
-Please find the GitHub URL for app template as follows:
-
-&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-database-sync</a>
-
-Please send feedback or feature requests to:
-
-&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
-
-Please join the user discussion groups:
-
-&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+  - Join our user discussion group at:
+      <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
