@@ -20,10 +20,10 @@ The application keeps the same data at destination but creates part files instea
   - FSInputModule
   - PartFileWriter
 - Supported data source
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 - Supported sinks
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 
 ## Resources

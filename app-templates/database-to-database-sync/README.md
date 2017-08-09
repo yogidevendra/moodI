@@ -19,18 +19,24 @@ First, it does a bulk upload from the configured table parallelly and continuous
   - JDBC POJO Poll input operator
   - JDBC POJO Insert output operator
 - Supported data source
-  - PostgreSQL version: 9.4
+  - PostgreSQL version: 9.4.x
   - Tested with PostgreSQL client library: org.postgresql:postgresql:9.4.1208.jre7
 - Supported sinks
-  - PostgreSQL version: 9.4
+  - PostgreSQL version: 9.4.x
   - Tested with PostgreSQL client library: org.postgresql:postgresql:9.4.1208.jre7
 
 ## Supported visualizations
 
-  | Description  | Widget   |
-  |---|---|
-  | Events read per minute from Source Database  | Line chart|
-  | Events written per minute to Sink Database | Line chart |
+| Description  | Widget   |
+|---|---|
+|Bytes read per minute from Source Database |Line Chart|
+|Bytes written per minute to Sink Database |Line Chart|
+|Events read per minute from Source Database |Line Chart|
+|Events written per minute to Sink Database |Line Chart|
+|Total events read from Source Database |Single Value|
+|Total events written to Sink Database |Single Value|
+|Total bytes read from Source Database |Single Value|
+|Total bytes written to Sink Database |Single Value|
 
 ## Resources
 

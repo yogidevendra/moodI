@@ -26,8 +26,8 @@ This application demonstrates continuous ingestion of streaming data source into
   - Apache Kafka version 0.9.0.x
   - Tested with kafka client library: org.apache.kafka:kafka_2.11:0.9.0.1
 - Supported sinks
-  - Apache Hadoop HDFS
-  - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
+  - Apache Hadoop HDFS version 2.6.x
+  - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar: 2.6.0
 
 ## Supported visualizations
 
