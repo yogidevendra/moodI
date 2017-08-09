@@ -23,10 +23,10 @@ Import the application from DataTorrent AppFactory and launch it to ingest data 
   - CsvFormatter Operator (Formatter)
   - StringFileOutputOperator Output Operator (Write to destination Hadoop Cluster)  
 - Supported data source
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 - Supported sinks
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 
 ## Resources

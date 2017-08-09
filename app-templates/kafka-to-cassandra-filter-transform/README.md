@@ -25,7 +25,7 @@ Import the application from DataTorrent AppFactory and launch it to ingest messa
   - Apache Kafka version 0.9.0.x
   - Tested with kafka client library: org.apache.kafka:kafka_2.11:0.9.0.1
 - Supported sinks
-  - Apache Cassandra
+  - Apache Cassandra version 3.1.x
   - Tested with cassandra library: com.datastax.cassandra:cassandra-driver-core:jar:3.1.0  
 
 ## Resources

@@ -20,20 +20,24 @@ This application demonstrates data preparation pipeline which reads lines from f
   - CsvFormatter
   - StringFileOutputOperator
 - Supported data source
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 - Supported sinks
-  - Apache Hadoop HDFS
+  - Apache Hadoop HDFS 2.6.x
   - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 
 ## Supported visualizations
 
-  | Description  | Widget   |
-  |---|---|
-  | Bytes read per minute from source HDFS  | Line chart|
-  | Bytes written per minute to destination HDFS | Line chart |
-  | Events read per minute from source HDFS  | Line chart|
-  | Events written per minute to destination HDFS | Line chart |
+| Description  | Widget   |
+|---|---|
+|Bytes read per minute from Input HDFS |Line Chart|
+|Bytes written per minute to Output HDFS |Line Chart|
+|Events read per minute from Input HDFS |Line Chart|
+|Events written per minute to Output HDFS |Line Chart|
+|Total events read from Input HDFS |Single Value|
+|Total events written to Output HDFS |Single Value|
+|Total bytes read from Input HDFS |Single Value|
+|Total bytes written to Output HDFS |Single Value|
 
 ## Resources
 
