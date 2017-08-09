@@ -3,11 +3,11 @@
 This application demonstrates continuous big data archival from HDFS.
 It ingests files as blocks for backup on remote HDFS cluster.
 
-- Applications avoids overhead of re-constructing the original file. Thus, it can process blocks in parallel .
+- Applications avoids overhead of re-constructing the original file. Thus, it can process blocks in parallel.
 The application keeps the same data at destination but creates part files instead of complete file.
 - The application scales linearly with number of block readers.
-- The application is fault tolerant and can withstand node and cluster outages without data loss.
-- The application is also highly performant and can perform as fast as the network bandwidth allows.
+- The application is fault tolerant and can withstand for node and cluster outages without data loss.
+- The application is also highly performant and can perform equivalent to network speed.
 - The only configuration user needs to provide is source and destination HDFS paths.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
@@ -28,7 +28,7 @@ The application keeps the same data at destination but creates part files instea
 
 ## Resources
 
-- Detailed documentation for this app-template is available at :
+- Detailed documentation for this app-template is available at:
 
    <a
      href="http://docs.datatorrent.com/app-templates/0.10.0/hdfs-part-file-copy/"  class="docs" id="docs" ga-track="docs"
@@ -38,8 +38,8 @@ The application keeps the same data at destination but creates part files instea
     <a
      href="https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-part-file-copy"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-part-file-copy</a>
 
-- Please send feedback or feature requests to :
+- Please send feedback or feature requests to:
     <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
-- Join our user discussion group at :
+- Join our user discussion group at:
     <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
