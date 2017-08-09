@@ -1,50 +1,45 @@
-### Description
-The Kafka to Cassandra transform application ingest messages in JSON string format from configured kafka topic, transforms the data and writes each message as a record in Cassandra Database store. This application uses PojoEvent as an example schema, this can be customized to use custom schema based on specific needs.
+## Description
+
+The Kafka to Cassandra (including Filtering, Transformation) application template demonstrates continuous big data preparation while reading data messages from a configured Kafka topic. This data is considered to be in JSON format, which is further filtered, transformed based on configurable properties. Finally, this prepared message is written to a Cassandra  . This could be easily utilized and extended by any developer to create a fast, fault tolerant and scalable Big Data Application to serve business with rich data.
+
+It continuously ingests messages based on a configured topic from a Kafka cluster. This application uses PojoEvent as an example schema, however, it can be customized to use custom schema based on business needs.
 
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
 - It is extremely easy to add custom logic to get your business value without worrying about database connectivity and operational details of database writer.
-- The only configuration user needs to provide is source kafka broker lists and cassandra database details like node, table and keyspace.
+- The only configuration user needs to provide is source Kafka broker lists and Cassandra database details like node, table and keyspace.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Import the application from DataTorrent AppHub and launch it to ingest messages in JSON string format from configured kafka topic and writes each message as a record in cassandra store with transformation. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Import the application from DataTorrent AppFactory and launch it to ingest messages in JSON string format from configured Kafka topic. It would write each transformed message as a record in Cassandra store. Please follow the walkthrough document below to understand the configurable properties. Moreover, one could easily add customized business logic to process the data during ingestion.
 
-### Quickstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=) for more details.
+## Implementation details
+- Logical flow diagram
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/08/kafka-to-cassandra-transform-dag.png)
 
-<iframe src="https://www.youtube.com/embed" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+- It uses following operators
+  - KafkaSinglePortInputOperator Input operator (Read from source Kafka Cluster)
+  - JsonParser Operator (Parser)
+  - FilterOperator Operator (Filter)
+  - CassandraOutputOperator Output Operator (Write to destination Cassandra Cluster)  
+- Supported data source
+  - Apache Kafka version 0.9.0.x
+  - Tested with kafka client library: org.apache.kafka:kafka_2.11:0.9.0.1
+- Supported sinks
+  - Apache Cassandra
+  - Tested with cassandra library: com.datastax.cassandra:cassandra-driver-core:jar:3.1.0  
 
-### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch) to add custom logic to the application template.
+## Resources
 
-<iframe src="https://www.youtube.com/embed/" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+  - Detailed documentation for this application template is available at:
 
-### Logical Plan
+    [http://docs.datatorrent.com/app-templates/0.10.0/kafka-to-cassandra-filter-transform](http://docs.datatorrent.com/app-templates/0.10.0/kafka-to-cassandra-filter-transform)
 
-Here is a preview of the logical plan of the application template
+  - Source code for this app-template is available at :
 
-![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/)
+    [https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-filter-transform](https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-filter-transform)
 
-### Launch App Properties
+  - Please send feedback or feature requests to :
+      <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
-Here is a preview of the properties to be set at application launch
-
-![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/)
-
-### Resources
-
-For [Walkthrough documentation](http://docs.datatorrent.com/app-templates/kafka-to-cassandra-transform) refer below link:
-
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/kafka-to-cassandra-transform"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/kafka-to-cassandra-transform</a>
-
-For [GitHub URL](http://docs.datatorrent.com/app-templates/kafka-to-cassandra-transform) refer below link:
-
-&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-transform"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/kafka-to-cassandra-transform</a>
-
-Please send feedback or feature requests to:
-
-&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
-
-Please join the user discussion groups:
-
-&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+  - Join our user discussion group at :
+      <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>

@@ -21,7 +21,7 @@ This application demonstrates continuous ingestion of streaming data source into
   - Transform operator
   - Filter operator
   - JSON formatter
-  - String file output operator
+  - String file output operator  
 - Supported data source
   - Apache Kafka version 0.9.0.x
   - Tested with kafka client library: org.apache.kafka:kafka_2.11:0.9.0.1
@@ -32,7 +32,7 @@ This application demonstrates continuous ingestion of streaming data source into
 ## Supported visualizations
 
 | Description  | Widget   |
-|---|---|---|---|---|
+|---|---|
 | Bytes read per minute from Kafka  | Line chart|
 | Bytes written per minute to HDFS | Line chart |
 | Events read per minute from Kafka | Line chart |
