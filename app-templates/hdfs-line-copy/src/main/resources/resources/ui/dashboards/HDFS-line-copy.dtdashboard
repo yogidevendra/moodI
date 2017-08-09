@@ -1,5 +1,5 @@
 {
-  "user": "chaitanya",
+  "user": "devendra",
   "name": "HDFS-line-copy",
   "config": {
     "applications": [
@@ -23,33 +23,26 @@
           },
           "dataModelOptions": {
             "dataSource": {
-              "displayName": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader)  (user: chaitanya; app: HDFS-line-copy)",
+              "displayName": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader)  (user: devendra; app: HDFS-line-copy)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&HDFS-line-copy&devendra&recordReader$BlockReader&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader) ",
-              "context": {
-                "keys": {
-                  "appName": "HDFS-line-copy",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "recordReader$BlockReader"
-                }
-              },
               "appName": "HDFS-line-copy",
-              "appUser": "chaitanya",
+              "appUser": "devendra",
               "appPackageSource": {
-                "user": "chaitanya",
+                "user": "devendra",
                 "name": "hdfs-line-copy",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "HDFS-line-copy"
               }
             },
@@ -76,7 +69,7 @@
                   "name": "appUser",
                   "type": "string",
                   "enumValues": [
-                    "chaitanya"
+                    "devendra"
                   ]
                 },
                 {
@@ -232,12 +225,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -247,7 +238,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -312,245 +303,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "valueFieldsAllDimensions": [
@@ -559,245 +655,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "currentValues": [
@@ -949,7 +1150,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -977,245 +1178,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "fieldsAllDimensions": [
@@ -1225,7 +1531,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -1253,245 +1559,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ]
             },
@@ -1503,15 +1914,7 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "HDFS-line-copy"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "recordReader$BlockReader"
-                  ]
+
                 },
                 "fields": [
                   "time",
@@ -1534,6 +1937,14 @@
             "tags": {
               "multiKeySelect": true
             },
+            "id": "line_chart_j5w6gil1_0",
+            "legends": {
+              "data": {
+                "bytesReadPerSec:SUM": {
+                  "color": "#1f77b4"
+                }
+              }
+            },
             "allowFetchData": true
           }
         },
@@ -1553,33 +1964,26 @@
           },
           "dataModelOptions": {
             "dataSource": {
-              "displayName": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader)  (user: chaitanya; app: HDFS-line-copy)",
+              "displayName": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader)  (user: devendra; app: HDFS-line-copy)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&HDFS-line-copy&devendra&recordReader$BlockReader&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&HDFS-line-copy&devendra&recordReader$BlockReader&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(recordReader$BlockReader) ",
-              "context": {
-                "keys": {
-                  "appName": "HDFS-line-copy",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "recordReader$BlockReader"
-                }
-              },
               "appName": "HDFS-line-copy",
-              "appUser": "chaitanya",
+              "appUser": "devendra",
               "appPackageSource": {
-                "user": "chaitanya",
+                "user": "devendra",
                 "name": "hdfs-line-copy",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "HDFS-line-copy"
               }
             },
@@ -1606,7 +2010,7 @@
                   "name": "appUser",
                   "type": "string",
                   "enumValues": [
-                    "chaitanya"
+                    "devendra"
                   ]
                 },
                 {
@@ -1762,12 +2166,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -1777,7 +2179,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -1842,245 +2244,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "valueFieldsAllDimensions": [
@@ -2089,245 +2596,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "currentValues": [
@@ -2479,7 +3091,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -2507,245 +3119,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ],
               "fieldsAllDimensions": [
@@ -2755,7 +3472,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -2783,245 +3500,350 @@
                   "id": "totalBytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalBytesRead:MIN",
                   "id": "totalBytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalBytesRead:MAX",
                   "id": "totalBytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalBytesRead:COUNT",
                   "id": "totalBytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalBytesRead:FIRST",
                   "id": "totalBytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalBytesRead:LAST",
                   "id": "totalBytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalBytesRead:AVG",
                   "id": "totalBytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalBytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesReadPerSec:SUM",
                   "id": "bytesReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesReadPerSec:MIN",
                   "id": "bytesReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesReadPerSec:MAX",
                   "id": "bytesReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesReadPerSec:COUNT",
                   "id": "bytesReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesReadPerSec:FIRST",
                   "id": "bytesReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesReadPerSec:LAST",
                   "id": "bytesReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesReadPerSec:AVG",
                   "id": "bytesReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "eventsReadPerSec:SUM",
                   "id": "eventsReadPerSec:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": true,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "eventsReadPerSec:MIN",
                   "id": "eventsReadPerSec:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "eventsReadPerSec:MAX",
                   "id": "eventsReadPerSec:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "eventsReadPerSec:COUNT",
                   "id": "eventsReadPerSec:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "eventsReadPerSec:FIRST",
                   "id": "eventsReadPerSec:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "eventsReadPerSec:LAST",
                   "id": "eventsReadPerSec:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "eventsReadPerSec:AVG",
                   "id": "eventsReadPerSec:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "eventsReadPerSec",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "bytesRead:SUM",
                   "id": "bytesRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "bytesRead:MIN",
                   "id": "bytesRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "bytesRead:MAX",
                   "id": "bytesRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "bytesRead:COUNT",
                   "id": "bytesRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "bytesRead:FIRST",
                   "id": "bytesRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "bytesRead:LAST",
                   "id": "bytesRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "bytesRead:AVG",
                   "id": "bytesRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "bytesRead",
+                  "subcategory": "AVG"
                 },
                 {
                   "key": "totalEventsRead:SUM",
                   "id": "totalEventsRead:SUM",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "SUM"
                 },
                 {
                   "key": "totalEventsRead:MIN",
                   "id": "totalEventsRead:MIN",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MIN"
                 },
                 {
                   "key": "totalEventsRead:MAX",
                   "id": "totalEventsRead:MAX",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "MAX"
                 },
                 {
                   "key": "totalEventsRead:COUNT",
                   "id": "totalEventsRead:COUNT",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "COUNT"
                 },
                 {
                   "key": "totalEventsRead:FIRST",
                   "id": "totalEventsRead:FIRST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "FIRST"
                 },
                 {
                   "key": "totalEventsRead:LAST",
                   "id": "totalEventsRead:LAST",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "LAST"
                 },
                 {
                   "key": "totalEventsRead:AVG",
                   "id": "totalEventsRead:AVG",
                   "type": "long",
                   "sort": "number",
-                  "filter": "number"
+                  "filter": "number",
+                  "selected": false,
+                  "category": "totalEventsRead",
+                  "subcategory": "AVG"
                 }
               ]
             },
@@ -3033,15 +3855,7 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "HDFS-line-copy"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "recordReader$BlockReader"
-                  ]
+
                 },
                 "fields": [
                   "time",
@@ -3064,6 +3878,14 @@
             "tags": {
               "multiKeySelect": true
             },
+            "id": "line_chart_j5w6i4vn_1",
+            "legends": {
+              "data": {
+                "eventsReadPerSec:SUM": {
+                  "color": "#1f77b4"
+                }
+              }
+            },
             "allowFetchData": true
           }
         },
@@ -3083,33 +3905,26 @@
           },
           "dataModelOptions": {
             "dataSource": {
-              "displayName": "[HISTORICAL] OperatorMetrics(fileOutput)  (user: chaitanya; app: HDFS-line-copy)",
+              "displayName": "[HISTORICAL] OperatorMetrics(fileOutput)  (user: devendra; app: HDFS-line-copy)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&HDFS-line-copy&devendra&fileOutput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&HDFS-line-copy&devendra&fileOutput&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&HDFS-line-copy&devendra&fileOutput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&HDFS-line-copy&devendra&fileOutput&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(fileOutput) ",
-              "context": {
-                "keys": {
-                  "appName": "HDFS-line-copy",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "fileOutput"
-                }
-              },
               "appName": "HDFS-line-copy",
-              "appUser": "chaitanya",
+              "appUser": "devendra",
               "appPackageSource": {
-                "user": "chaitanya",
+                "user": "devendra",
                 "name": "hdfs-line-copy",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "HDFS-line-copy"
               }
             },
@@ -3136,7 +3951,7 @@
                   "name": "appUser",
                   "type": "string",
                   "enumValues": [
-                    "chaitanya"
+                    "devendra"
                   ]
                 },
                 {
@@ -3292,12 +4107,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -3307,7 +4120,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -4219,7 +5032,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -4600,7 +5413,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -4983,15 +5796,7 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "HDFS-line-copy"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "fileOutput"
-                  ]
+
                 },
                 "fields": [
                   "time",
@@ -5013,6 +5818,116 @@
             "tags": {
               "multiKeySelect": true
             },
+            "id": "line_chart_j5w6nkgd_3",
+            "legends": {
+              "data": {
+                "eventsWrittenPerSecond:SUM": {
+                  "color": "#1f77b4"
+                },
+                "eventsWrittenPerSecond:MIN": {
+                  "color": "#9edae5"
+                },
+                "eventsWrittenPerSecond:MAX": {
+                  "color": "#17becf"
+                },
+                "eventsWrittenPerSecond:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "eventsWrittenPerSecond:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "eventsWrittenPerSecond:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "eventsWrittenPerSecond:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "byteCount:SUM": {
+                  "color": "#d62728"
+                },
+                "byteCount:MIN": {
+                  "color": "#98df8a"
+                },
+                "byteCount:MAX": {
+                  "color": "#2ca02c"
+                },
+                "byteCount:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "byteCount:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "byteCount:LAST": {
+                  "color": "#ffbb78"
+                },
+                "byteCount:AVG": {
+                  "color": "#1f77b4"
+                },
+                "totalEventsWritten:SUM": {
+                  "color": "#7f7f7f"
+                },
+                "totalEventsWritten:MIN": {
+                  "color": "#f7b6d2"
+                },
+                "totalEventsWritten:MAX": {
+                  "color": "#e377c2"
+                },
+                "totalEventsWritten:COUNT": {
+                  "color": "#c5b0d5"
+                },
+                "totalEventsWritten:FIRST": {
+                  "color": "#8c564b"
+                },
+                "totalEventsWritten:LAST": {
+                  "color": "#c49c94"
+                },
+                "totalEventsWritten:AVG": {
+                  "color": "#9467bd"
+                },
+                "bytesWrittenPerSecond:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "bytesWrittenPerSecond:MIN": {
+                  "color": "#e377c2"
+                },
+                "bytesWrittenPerSecond:MAX": {
+                  "color": "#c49c94"
+                },
+                "bytesWrittenPerSecond:COUNT": {
+                  "color": "#9467bd"
+                },
+                "bytesWrittenPerSecond:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "bytesWrittenPerSecond:LAST": {
+                  "color": "#8c564b"
+                },
+                "bytesWrittenPerSecond:AVG": {
+                  "color": "#ff9896"
+                },
+                "totalBytes:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalBytes:MIN": {
+                  "color": "#d62728"
+                },
+                "totalBytes:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalBytes:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalBytes:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalBytes:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalBytes:AVG": {
+                  "color": "#aec7e8"
+                }
+              }
+            },
             "allowFetchData": true
           }
         },
@@ -5032,33 +5947,26 @@
           },
           "dataModelOptions": {
             "dataSource": {
-              "displayName": "[HISTORICAL] OperatorMetrics(fileOutput)  (user: chaitanya; app: HDFS-line-copy)",
+              "displayName": "[HISTORICAL] OperatorMetrics(fileOutput)  (user: devendra; app: HDFS-line-copy)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&HDFS-line-copy&devendra&fileOutput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&HDFS-line-copy&devendra&fileOutput&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&HDFS-line-copy&devendra&fileOutput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&HDFS-line-copy&devendra&fileOutput&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(fileOutput) ",
-              "context": {
-                "keys": {
-                  "appName": "HDFS-line-copy",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "fileOutput"
-                }
-              },
               "appName": "HDFS-line-copy",
-              "appUser": "chaitanya",
+              "appUser": "devendra",
               "appPackageSource": {
-                "user": "chaitanya",
+                "user": "devendra",
                 "name": "hdfs-line-copy",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "HDFS-line-copy"
               }
             },
@@ -5085,7 +5993,7 @@
                   "name": "appUser",
                   "type": "string",
                   "enumValues": [
-                    "chaitanya"
+                    "devendra"
                   ]
                 },
                 {
@@ -5241,12 +6149,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -5256,7 +6162,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -6168,7 +7074,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -6549,7 +7455,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -6932,15 +7838,7 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "HDFS-line-copy"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "fileOutput"
-                  ]
+
                 },
                 "fields": [
                   "time",
@@ -6962,12 +7860,124 @@
             "tags": {
               "multiKeySelect": true
             },
+            "id": "line_chart_j5w6q6dr_5",
+            "legends": {
+              "data": {
+                "eventsWrittenPerSecond:SUM": {
+                  "color": "#1f77b4"
+                },
+                "eventsWrittenPerSecond:MIN": {
+                  "color": "#9edae5"
+                },
+                "eventsWrittenPerSecond:MAX": {
+                  "color": "#17becf"
+                },
+                "eventsWrittenPerSecond:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "eventsWrittenPerSecond:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "eventsWrittenPerSecond:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "eventsWrittenPerSecond:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "byteCount:SUM": {
+                  "color": "#d62728"
+                },
+                "byteCount:MIN": {
+                  "color": "#98df8a"
+                },
+                "byteCount:MAX": {
+                  "color": "#2ca02c"
+                },
+                "byteCount:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "byteCount:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "byteCount:LAST": {
+                  "color": "#ffbb78"
+                },
+                "byteCount:AVG": {
+                  "color": "#1f77b4"
+                },
+                "totalEventsWritten:SUM": {
+                  "color": "#7f7f7f"
+                },
+                "totalEventsWritten:MIN": {
+                  "color": "#f7b6d2"
+                },
+                "totalEventsWritten:MAX": {
+                  "color": "#e377c2"
+                },
+                "totalEventsWritten:COUNT": {
+                  "color": "#c5b0d5"
+                },
+                "totalEventsWritten:FIRST": {
+                  "color": "#8c564b"
+                },
+                "totalEventsWritten:LAST": {
+                  "color": "#c49c94"
+                },
+                "totalEventsWritten:AVG": {
+                  "color": "#9467bd"
+                },
+                "bytesWrittenPerSecond:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "bytesWrittenPerSecond:MIN": {
+                  "color": "#e377c2"
+                },
+                "bytesWrittenPerSecond:MAX": {
+                  "color": "#c49c94"
+                },
+                "bytesWrittenPerSecond:COUNT": {
+                  "color": "#9467bd"
+                },
+                "bytesWrittenPerSecond:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "bytesWrittenPerSecond:LAST": {
+                  "color": "#8c564b"
+                },
+                "bytesWrittenPerSecond:AVG": {
+                  "color": "#ff9896"
+                },
+                "totalBytes:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalBytes:MIN": {
+                  "color": "#d62728"
+                },
+                "totalBytes:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalBytes:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalBytes:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalBytes:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalBytes:AVG": {
+                  "color": "#aec7e8"
+                }
+              }
+            },
             "allowFetchData": true
           }
         }
       ]
     }
   },
-  "id": "chaitanya:HDFS-line-copy",
-  "mtime": "2017-06-28T20:41:33.436Z"
+  "id": "devendra:HDFS-line-copy-for-export",
+  "ids": "application_1499808956620_1246",
+  "mtime": "2017-08-03T08:39:39.879Z",
+  "index": "6"
 }
