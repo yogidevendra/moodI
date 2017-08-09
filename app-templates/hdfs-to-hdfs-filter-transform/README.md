@@ -1,49 +1,44 @@
-### Description
-The HDFS to HDFS with transform Application Template continuously ingests files as lines from one Hadoop cluster to other retaining one-to-one file traceability.
+## Description
+
+The HDFS to HDFS (including Filtering, Transformation) application template demonstrates continuous big data preparation while reading data from a source Hadoop cluster. This data is considered to be in delimited format, which is further filtered, transformed based on configurable properties. Finally, this prepared data is written back in a desired format to the destination Hadoop cluster. This could be easily utilized and extended by any developer to create a fast, fault tolerant and scalable Big Data Application to serve business with rich data.
+
+It continuously ingests data files as lines from one Hadoop cluster to other retaining one-to-one file traceability.
+
 - The application scales linearly with number of record readers.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can perform as fast as the network allows.
 - It is extremely easy to add custom logic to get your business value without worrying about connectivity and operational details of HDFS reader or writer.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
+Import the application from DataTorrent AppFactory and launch it to ingest data from one Hadoop cluster to another. Follow the walkthrough document below to understand the configurable properties. Moreover, one could easily add customized business logic to process the data during ingestion.
 
-Import the application from DataTorrent AppHub and launch it to ingest data from one Hadoop cluster to another.  Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+## Implementation details
 
-### Quickstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=z20xzkQeJho) to import and launch the application.
+- Logical flow diagram
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/08/hdfs-to-hdfs-filter-transform-dag.png)
 
-<iframe src="https://www.youtube.com/embed/z20xzkQeJho?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+- It uses following operators
+  - FSRecordReaderModule Input operator (Read from source Hadoop Cluster)
+  - CsvParser Operator (Parser)
+  - FilterOperator Operator (Filter)
+  - CsvFormatter Operator (Formatter)
+  - StringFileOutputOperator Output Operator (Write to destination Hadoop Cluster)  
+- Supported data source
+  - Apache Hadoop HDFS
+  - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
+- Supported sinks
+  - Apache Hadoop HDFS
+  - Tested with hadoop library: org.apache.hadoop:hadoop-common:jar:2.6.0
 
-### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=SqG9janTCX0) to add custom logic to the application template.
+## Resources
 
-<iframe src="https://www.youtube.com/embed/SqG9janTCX0?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+  - Detailed documentation for this application template is available at :
+[http://docs.datatorrent.com/app-templates/0.10.0/hdfs-to-hdfs-filter-transform](http://docs.datatorrent.com/app-templates/0.10.0/hdfs-to-hdfs-filter-transform)
 
-### Logical Plan
+  - Source code for this app-template is available at :
+  [https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-to-hdfs-filter-transform](https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-to-hdfs-filter-transform)
 
-Here is a preview of the logical plan of the application template
+  - Please send feedback or feature requests to :
+      <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
-![Logical Plan](https://drive.google.com/file/d/0B8jtLW_fxIAPWVV6VnZRVnVUMTQ/preview)
-
-### Launch App Properties
-
-Here is a preview of the properties to be set at application launch
-
-![Launch App Properties](https://drive.google.com/file/d/0B8jtLW_fxIAPWlhSeHVUZTBtcVU/preview)
-
-### Resources
-
-Please find the walkthrough docs for app template as follows:
-
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/hdfs-hdfs-transform/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/hdfs-hdfs-transform/</a>
-
-Please find the GitHub URL for app template as follows:
-
-&nbsp; <a href="https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-hdfs-transform"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/moodI/tree/master/app-templates/hdfs-hdfs-transform</a>
-
-Please send feedback or feature requests to:
-
-&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
-
-Please join the user discussion groups:
-
-&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+  - Join our user discussion group at :
+      <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
