@@ -45,10 +45,8 @@ public class KinesisByteArrayInputOperator extends com.datatorrent.contrib.kines
   public void beginWindow(long windowId)
   {
     super.beginWindow(windowId);
-    bytesReadPerSecond = 0;
     bytesReadPerWindow = 0;
     eventsReadPerWindow = 0;
-    eventsReadPerSecond = 0;
   }
 
   @Override

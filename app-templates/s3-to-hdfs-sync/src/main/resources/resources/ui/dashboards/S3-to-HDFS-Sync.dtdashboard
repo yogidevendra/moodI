@@ -1,0 +1,3273 @@
+{
+    "config": {
+        "applications": [],
+        "state": {
+            "widgets": [
+                {
+                    "dataModelOptions": {
+                        "allowFetchData": true,
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "time",
+                                    "appName",
+                                    "appUser",
+                                    "logicalOperatorName",
+                                    "bytesWrittenPerSecond:AVG"
+                                ],
+                                "incompleteResultOK": true,
+                                "keys": {},
+                                "time": {
+                                    "bucket": "1m",
+                                    "latestNumBuckets": "10"
+                                }
+                            },
+                            "dimensionId": "0",
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true,
+                            "rangeType": "latestNumBuckets"
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[HISTORICAL] OperatorMetrics(HDFSFileCopyModule$BlockWriter)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[HISTORICAL] OperatorMetrics(HDFSFileCopyModule$BlockWriter) ",
+                            "query": {
+                                "operatorName": "DTMetricsHistQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "topic": "DTMetricsHistQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsHistResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "topic": "DTMetricsHistResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "line_chart_j64t4nms_0",
+                        "keysRequiringValues": [],
+                        "legends": {
+                            "data": {
+                                "bytesWrittenPerSecond:AVG": {
+                                    "color": "#1f77b4"
+                                },
+                                "bytesWrittenPerSecond:COUNT": {
+                                    "color": "#aec7e8"
+                                },
+                                "bytesWrittenPerSecond:FIRST": {
+                                    "color": "#ff7f0e"
+                                },
+                                "bytesWrittenPerSecond:LAST": {
+                                    "color": "#ffbb78"
+                                },
+                                "bytesWrittenPerSecond:MAX": {
+                                    "color": "#2ca02c"
+                                },
+                                "bytesWrittenPerSecond:MIN": {
+                                    "color": "#98df8a"
+                                },
+                                "bytesWrittenPerSecond:SUM": {
+                                    "color": "#d62728"
+                                },
+                                "totalBytesWritten:AVG": {
+                                    "color": "#ff9896"
+                                },
+                                "totalBytesWritten:COUNT": {
+                                    "color": "#9467bd"
+                                },
+                                "totalBytesWritten:FIRST": {
+                                    "color": "#c5b0d5"
+                                },
+                                "totalBytesWritten:LAST": {
+                                    "color": "#8c564b"
+                                },
+                                "totalBytesWritten:MAX": {
+                                    "color": "#c49c94"
+                                },
+                                "totalBytesWritten:MIN": {
+                                    "color": "#e377c2"
+                                },
+                                "totalBytesWritten:SUM": {
+                                    "color": "#f7b6d2"
+                                }
+                            }
+                        },
+                        "loadingData": false,
+                        "schema": {
+                            "currentValues": [
+                                {
+                                    "name": "totalBytesWritten:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "dimensions": [
+                                {
+                                    "combination": [],
+                                    "id": "0",
+                                    "label": ""
+                                }
+                            ],
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:SUM",
+                                    "key": "bytesWrittenPerSecond:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MIN",
+                                    "key": "bytesWrittenPerSecond:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MAX",
+                                    "key": "bytesWrittenPerSecond:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:COUNT",
+                                    "key": "bytesWrittenPerSecond:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:FIRST",
+                                    "key": "bytesWrittenPerSecond:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:LAST",
+                                    "key": "bytesWrittenPerSecond:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:AVG",
+                                    "key": "bytesWrittenPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "fieldsAllDimensions": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:SUM",
+                                    "key": "bytesWrittenPerSecond:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MIN",
+                                    "key": "bytesWrittenPerSecond:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MAX",
+                                    "key": "bytesWrittenPerSecond:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:COUNT",
+                                    "key": "bytesWrittenPerSecond:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:FIRST",
+                                    "key": "bytesWrittenPerSecond:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:LAST",
+                                    "key": "bytesWrittenPerSecond:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:AVG",
+                                    "key": "bytesWrittenPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "keyFields": [
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "keys": [
+                                {
+                                    "enumValues": [
+                                        "S3-to-HDFS-Sync"
+                                    ],
+                                    "name": "appName",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "dttbc"
+                                    ],
+                                    "name": "appUser",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "HDFSFileCopyModule$BlockWriter"
+                                    ],
+                                    "name": "logicalOperatorName",
+                                    "type": "string"
+                                }
+                            ],
+                            "schemaType": "dimensions",
+                            "schemaVersion": "1.0",
+                            "time": {
+                                "buckets": [
+                                    "1m",
+                                    "1h",
+                                    "1d"
+                                ],
+                                "slidingAggregateSupported": true
+                            },
+                            "timeFields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                }
+                            ],
+                            "valueFields": [
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:SUM",
+                                    "key": "bytesWrittenPerSecond:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MIN",
+                                    "key": "bytesWrittenPerSecond:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MAX",
+                                    "key": "bytesWrittenPerSecond:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:COUNT",
+                                    "key": "bytesWrittenPerSecond:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:FIRST",
+                                    "key": "bytesWrittenPerSecond:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:LAST",
+                                    "key": "bytesWrittenPerSecond:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:AVG",
+                                    "key": "bytesWrittenPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "valueFieldsAllDimensions": [
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:SUM",
+                                    "key": "totalBytesWritten:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MIN",
+                                    "key": "totalBytesWritten:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:MAX",
+                                    "key": "totalBytesWritten:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:COUNT",
+                                    "key": "totalBytesWritten:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:FIRST",
+                                    "key": "totalBytesWritten:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:LAST",
+                                    "key": "totalBytesWritten:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesWritten",
+                                    "filter": "number",
+                                    "id": "totalBytesWritten:AVG",
+                                    "key": "totalBytesWritten:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:SUM",
+                                    "key": "bytesWrittenPerSecond:SUM",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MIN",
+                                    "key": "bytesWrittenPerSecond:MIN",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:MAX",
+                                    "key": "bytesWrittenPerSecond:MAX",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:COUNT",
+                                    "key": "bytesWrittenPerSecond:COUNT",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:FIRST",
+                                    "key": "bytesWrittenPerSecond:FIRST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:LAST",
+                                    "key": "bytesWrittenPerSecond:LAST",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesWrittenPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesWrittenPerSecond:AVG",
+                                    "key": "bytesWrittenPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "name": "totalBytesWritten:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesWritten:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond:AVG",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "tags": {
+                            "multiKeySelect": true
+                        }
+                    },
+                    "name": "line chart",
+                    "size": {
+                        "contentOverflow": "hidden",
+                        "height": "300",
+                        "minHeight": "300px",
+                        "minWidth": "500px",
+                        "overflow": "hidden",
+                        "width": "50%"
+                    },
+                    "style": {},
+                    "title": "Bytes read per second from S3"
+                },
+                {
+                    "dataModelOptions": {
+                        "allowFetchData": true,
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "time",
+                                    "appName",
+                                    "appUser",
+                                    "logicalOperatorName",
+                                    "bytesReadPerSecond:AVG"
+                                ],
+                                "incompleteResultOK": true,
+                                "keys": {},
+                                "time": {
+                                    "bucket": "1m",
+                                    "latestNumBuckets": "10"
+                                }
+                            },
+                            "dimensionId": "0",
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true,
+                            "rangeType": "latestNumBuckets"
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[HISTORICAL] OperatorMetrics(S3InputModule$BlockReader)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[HISTORICAL] OperatorMetrics(S3InputModule$BlockReader) ",
+                            "query": {
+                                "operatorName": "DTMetricsHistQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "topic": "DTMetricsHistQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsHistResult&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "topic": "DTMetricsHistResult&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "line_chart_j64t5ckt_1",
+                        "keysRequiringValues": [],
+                        "legends": {
+                            "data": {
+                                "bytesRead:AVG": {
+                                    "color": "#1f77b4"
+                                },
+                                "bytesRead:COUNT": {
+                                    "color": "#aec7e8"
+                                },
+                                "bytesRead:FIRST": {
+                                    "color": "#ff7f0e"
+                                },
+                                "bytesRead:LAST": {
+                                    "color": "#ffbb78"
+                                },
+                                "bytesRead:MAX": {
+                                    "color": "#2ca02c"
+                                },
+                                "bytesRead:MIN": {
+                                    "color": "#98df8a"
+                                },
+                                "bytesRead:SUM": {
+                                    "color": "#d62728"
+                                },
+                                "bytesReadPerSecond:AVG": {
+                                    "color": "#ff9896"
+                                },
+                                "bytesReadPerSecond:COUNT": {
+                                    "color": "#9467bd"
+                                },
+                                "bytesReadPerSecond:FIRST": {
+                                    "color": "#c5b0d5"
+                                },
+                                "bytesReadPerSecond:LAST": {
+                                    "color": "#8c564b"
+                                },
+                                "bytesReadPerSecond:MAX": {
+                                    "color": "#c49c94"
+                                },
+                                "bytesReadPerSecond:MIN": {
+                                    "color": "#e377c2"
+                                },
+                                "bytesReadPerSecond:SUM": {
+                                    "color": "#f7b6d2"
+                                },
+                                "totalBlocksRead:AVG": {
+                                    "color": "#7f7f7f"
+                                },
+                                "totalBlocksRead:COUNT": {
+                                    "color": "#c7c7c7"
+                                },
+                                "totalBlocksRead:FIRST": {
+                                    "color": "#bcbd22"
+                                },
+                                "totalBlocksRead:LAST": {
+                                    "color": "#dbdb8d"
+                                },
+                                "totalBlocksRead:MAX": {
+                                    "color": "#17becf"
+                                },
+                                "totalBlocksRead:MIN": {
+                                    "color": "#9edae5"
+                                },
+                                "totalBlocksRead:SUM": {
+                                    "color": "#1f77b4"
+                                },
+                                "totalBytesRead:AVG": {
+                                    "color": "#aec7e8"
+                                },
+                                "totalBytesRead:COUNT": {
+                                    "color": "#ff7f0e"
+                                },
+                                "totalBytesRead:FIRST": {
+                                    "color": "#ffbb78"
+                                },
+                                "totalBytesRead:LAST": {
+                                    "color": "#2ca02c"
+                                },
+                                "totalBytesRead:MAX": {
+                                    "color": "#98df8a"
+                                },
+                                "totalBytesRead:MIN": {
+                                    "color": "#d62728"
+                                },
+                                "totalBytesRead:SUM": {
+                                    "color": "#ff9896"
+                                }
+                            }
+                        },
+                        "loadingData": false,
+                        "schema": {
+                            "currentValues": [
+                                {
+                                    "name": "totalBytesRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "dimensions": [
+                                {
+                                    "combination": [],
+                                    "id": "0",
+                                    "label": ""
+                                }
+                            ],
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:SUM",
+                                    "key": "totalBytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MIN",
+                                    "key": "totalBytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MAX",
+                                    "key": "totalBytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:COUNT",
+                                    "key": "totalBytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:FIRST",
+                                    "key": "totalBytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:LAST",
+                                    "key": "totalBytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:AVG",
+                                    "key": "totalBytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:SUM",
+                                    "key": "bytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MIN",
+                                    "key": "bytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MAX",
+                                    "key": "bytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:COUNT",
+                                    "key": "bytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:FIRST",
+                                    "key": "bytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:LAST",
+                                    "key": "bytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:AVG",
+                                    "key": "bytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:SUM",
+                                    "key": "totalBlocksRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MIN",
+                                    "key": "totalBlocksRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MAX",
+                                    "key": "totalBlocksRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:COUNT",
+                                    "key": "totalBlocksRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:FIRST",
+                                    "key": "totalBlocksRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:LAST",
+                                    "key": "totalBlocksRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:AVG",
+                                    "key": "totalBlocksRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:SUM",
+                                    "key": "bytesReadPerSecond:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MIN",
+                                    "key": "bytesReadPerSecond:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MAX",
+                                    "key": "bytesReadPerSecond:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:COUNT",
+                                    "key": "bytesReadPerSecond:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:FIRST",
+                                    "key": "bytesReadPerSecond:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:LAST",
+                                    "key": "bytesReadPerSecond:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:AVG",
+                                    "key": "bytesReadPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "fieldsAllDimensions": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:SUM",
+                                    "key": "totalBytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MIN",
+                                    "key": "totalBytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MAX",
+                                    "key": "totalBytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:COUNT",
+                                    "key": "totalBytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:FIRST",
+                                    "key": "totalBytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:LAST",
+                                    "key": "totalBytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:AVG",
+                                    "key": "totalBytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:SUM",
+                                    "key": "bytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MIN",
+                                    "key": "bytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MAX",
+                                    "key": "bytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:COUNT",
+                                    "key": "bytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:FIRST",
+                                    "key": "bytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:LAST",
+                                    "key": "bytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:AVG",
+                                    "key": "bytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:SUM",
+                                    "key": "totalBlocksRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MIN",
+                                    "key": "totalBlocksRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MAX",
+                                    "key": "totalBlocksRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:COUNT",
+                                    "key": "totalBlocksRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:FIRST",
+                                    "key": "totalBlocksRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:LAST",
+                                    "key": "totalBlocksRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:AVG",
+                                    "key": "totalBlocksRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:SUM",
+                                    "key": "bytesReadPerSecond:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MIN",
+                                    "key": "bytesReadPerSecond:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MAX",
+                                    "key": "bytesReadPerSecond:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:COUNT",
+                                    "key": "bytesReadPerSecond:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:FIRST",
+                                    "key": "bytesReadPerSecond:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:LAST",
+                                    "key": "bytesReadPerSecond:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:AVG",
+                                    "key": "bytesReadPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "keyFields": [
+                                {
+                                    "filter": "like",
+                                    "id": "appName",
+                                    "key": "appName",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "appUser",
+                                    "key": "appUser",
+                                    "sort": "string",
+                                    "type": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "logicalOperatorName",
+                                    "key": "logicalOperatorName",
+                                    "sort": "string",
+                                    "type": "string"
+                                }
+                            ],
+                            "keys": [
+                                {
+                                    "enumValues": [
+                                        "S3-to-HDFS-Sync"
+                                    ],
+                                    "name": "appName",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "dttbc"
+                                    ],
+                                    "name": "appUser",
+                                    "type": "string"
+                                },
+                                {
+                                    "enumValues": [
+                                        "S3InputModule$BlockReader"
+                                    ],
+                                    "name": "logicalOperatorName",
+                                    "type": "string"
+                                }
+                            ],
+                            "schemaType": "dimensions",
+                            "schemaVersion": "1.0",
+                            "time": {
+                                "buckets": [
+                                    "1m",
+                                    "1h",
+                                    "1d"
+                                ],
+                                "slidingAggregateSupported": true
+                            },
+                            "timeFields": [
+                                {
+                                    "filter": "date",
+                                    "id": "time",
+                                    "key": "time",
+                                    "ngFilter": "relativeTimestamp",
+                                    "sort": "number",
+                                    "type": "date"
+                                }
+                            ],
+                            "valueFields": [
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:SUM",
+                                    "key": "totalBytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MIN",
+                                    "key": "totalBytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MAX",
+                                    "key": "totalBytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:COUNT",
+                                    "key": "totalBytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:FIRST",
+                                    "key": "totalBytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:LAST",
+                                    "key": "totalBytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:AVG",
+                                    "key": "totalBytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:SUM",
+                                    "key": "bytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MIN",
+                                    "key": "bytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MAX",
+                                    "key": "bytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:COUNT",
+                                    "key": "bytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:FIRST",
+                                    "key": "bytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:LAST",
+                                    "key": "bytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:AVG",
+                                    "key": "bytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:SUM",
+                                    "key": "totalBlocksRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MIN",
+                                    "key": "totalBlocksRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MAX",
+                                    "key": "totalBlocksRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:COUNT",
+                                    "key": "totalBlocksRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:FIRST",
+                                    "key": "totalBlocksRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:LAST",
+                                    "key": "totalBlocksRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:AVG",
+                                    "key": "totalBlocksRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:SUM",
+                                    "key": "bytesReadPerSecond:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MIN",
+                                    "key": "bytesReadPerSecond:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MAX",
+                                    "key": "bytesReadPerSecond:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:COUNT",
+                                    "key": "bytesReadPerSecond:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:FIRST",
+                                    "key": "bytesReadPerSecond:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:LAST",
+                                    "key": "bytesReadPerSecond:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:AVG",
+                                    "key": "bytesReadPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "valueFieldsAllDimensions": [
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:SUM",
+                                    "key": "totalBytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MIN",
+                                    "key": "totalBytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:MAX",
+                                    "key": "totalBytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:COUNT",
+                                    "key": "totalBytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:FIRST",
+                                    "key": "totalBytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:LAST",
+                                    "key": "totalBytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBytesRead",
+                                    "filter": "number",
+                                    "id": "totalBytesRead:AVG",
+                                    "key": "totalBytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:SUM",
+                                    "key": "bytesRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MIN",
+                                    "key": "bytesRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:MAX",
+                                    "key": "bytesRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:COUNT",
+                                    "key": "bytesRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:FIRST",
+                                    "key": "bytesRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:LAST",
+                                    "key": "bytesRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesRead",
+                                    "filter": "number",
+                                    "id": "bytesRead:AVG",
+                                    "key": "bytesRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:SUM",
+                                    "key": "totalBlocksRead:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MIN",
+                                    "key": "totalBlocksRead:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:MAX",
+                                    "key": "totalBlocksRead:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:COUNT",
+                                    "key": "totalBlocksRead:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:FIRST",
+                                    "key": "totalBlocksRead:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:LAST",
+                                    "key": "totalBlocksRead:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "totalBlocksRead",
+                                    "filter": "number",
+                                    "id": "totalBlocksRead:AVG",
+                                    "key": "totalBlocksRead:AVG",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:SUM",
+                                    "key": "bytesReadPerSecond:SUM",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MIN",
+                                    "key": "bytesReadPerSecond:MIN",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:MAX",
+                                    "key": "bytesReadPerSecond:MAX",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:COUNT",
+                                    "key": "bytesReadPerSecond:COUNT",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:FIRST",
+                                    "key": "bytesReadPerSecond:FIRST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:LAST",
+                                    "key": "bytesReadPerSecond:LAST",
+                                    "selected": false,
+                                    "sort": "number",
+                                    "subcategory": "LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "category": "bytesReadPerSecond",
+                                    "filter": "number",
+                                    "id": "bytesReadPerSecond:AVG",
+                                    "key": "bytesReadPerSecond:AVG",
+                                    "selected": true,
+                                    "sort": "number",
+                                    "subcategory": "AVG",
+                                    "type": "long"
+                                }
+                            ],
+                            "values": [
+                                {
+                                    "name": "totalBytesRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBytesRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead:AVG",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:SUM",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:MIN",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:MAX",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:COUNT",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:FIRST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:LAST",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond:AVG",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "tags": {
+                            "multiKeySelect": true
+                        }
+                    },
+                    "name": "line chart",
+                    "size": {
+                        "contentOverflow": "hidden",
+                        "height": "300",
+                        "minHeight": "300px",
+                        "minWidth": "500px",
+                        "overflow": "hidden",
+                        "width": "50%"
+                    },
+                    "style": {},
+                    "title": "Bytes written per Second on HDFS"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "colors": {
+                                "flat": "#CCCCCC"
+                            },
+                            "keyField": "totalFilesRead",
+                            "valueField": "totalFilesRead",
+                            "valueFields": [
+                                "totalFilesRead",
+                                "filesProcessed"
+                            ],
+                            "valueFormat": ",d",
+                            "valueLabel": "",
+                            "valueLabelOverride": true,
+                            "valueLabelPlacement": "above"
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "totalFilesRead",
+                                    "filesProcessed"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "S3-to-HDFS-Sync",
+                                    "appUser": "dttbc",
+                                    "logicalOperatorName": "S3InputModule$FileSplitter"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[REALTIME] OperatorMetric(S3InputModule$FileSplitter)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[REALTIME] OperatorMetric(S3InputModule$FileSplitter) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$FileSplitter&",
+                                "topic": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$FileSplitter&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&S3InputModule$FileSplitter&",
+                                "topic": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&S3InputModule$FileSplitter&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "snapshot_single_value_j64t7wdb_2",
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "totalFilesRead",
+                                    "key": "totalFilesRead",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "filesProcessed",
+                                    "key": "filesProcessed",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "appUser": "dttbc",
+                                "logicalOperatorName": "S3InputModule$FileSplitter"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "totalFilesRead",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "filesProcessed",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "totalFilesRead",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "height": "100px",
+                        "minHeight": "100px",
+                        "minWidth": "200px",
+                        "width": "25%"
+                    },
+                    "style": {},
+                    "title": "Total files read from S3"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "colors": {
+                                "flat": "#CCCCCC"
+                            },
+                            "keyField": "bytesWritten",
+                            "valueField": "totalCompletedFiles",
+                            "valueFields": [
+                                "bytesWritten",
+                                "totalCompletedFiles",
+                                "queueLength"
+                            ],
+                            "valueFormat": ",d",
+                            "valueLabel": "",
+                            "valueLabelOverride": true,
+                            "valueLabelPlacement": "above"
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "bytesWritten",
+                                    "totalCompletedFiles",
+                                    "queueLength"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "S3-to-HDFS-Sync",
+                                    "appUser": "dttbc",
+                                    "logicalOperatorName": "HDFSFileCopyModule$FileMerger"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[REALTIME] OperatorMetric(HDFSFileCopyModule$FileMerger)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[REALTIME] OperatorMetric(HDFSFileCopyModule$FileMerger) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$FileMerger&",
+                                "topic": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$FileMerger&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$FileMerger&",
+                                "topic": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$FileMerger&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "snapshot_single_value_j64t8qy0_3",
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "bytesWritten",
+                                    "key": "bytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalCompletedFiles",
+                                    "key": "totalCompletedFiles",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "queueLength",
+                                    "key": "queueLength",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "appUser": "dttbc",
+                                "logicalOperatorName": "HDFSFileCopyModule$FileMerger"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "bytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalCompletedFiles",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "queueLength",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "bytesWritten",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "height": "100px",
+                        "minHeight": "100px",
+                        "minWidth": "200px",
+                        "width": "25%"
+                    },
+                    "style": {},
+                    "title": "Total completed files on HDFS"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "colors": {
+                                "flat": "#CCCCCC"
+                            },
+                            "keyField": "totalBytesRead",
+                            "valueField": "totalBytesRead",
+                            "valueFields": [
+                                "totalBytesRead",
+                                "bytesRead",
+                                "totalBlocksRead",
+                                "bytesReadPerSecond"
+                            ],
+                            "valueFormat": ",d",
+                            "valueLabel": "",
+                            "valueLabelOverride": true,
+                            "valueLabelPlacement": "above"
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "totalBytesRead",
+                                    "bytesRead",
+                                    "totalBlocksRead",
+                                    "bytesReadPerSecond"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "S3-to-HDFS-Sync",
+                                    "appUser": "dttbc",
+                                    "logicalOperatorName": "S3InputModule$BlockReader"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[REALTIME] OperatorMetric(S3InputModule$BlockReader)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[REALTIME] OperatorMetric(S3InputModule$BlockReader) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "topic": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "topic": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&S3InputModule$BlockReader&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "snapshot_single_value_j64t9dl6_4",
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "totalBytesRead",
+                                    "key": "totalBytesRead",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "bytesRead",
+                                    "key": "bytesRead",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "totalBlocksRead",
+                                    "key": "totalBlocksRead",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "bytesReadPerSecond",
+                                    "key": "bytesReadPerSecond",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "appUser": "dttbc",
+                                "logicalOperatorName": "S3InputModule$BlockReader"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "totalBytesRead",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesRead",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "totalBlocksRead",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesReadPerSecond",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "totalBytesRead",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "height": "100px",
+                        "minHeight": "100px",
+                        "minWidth": "200px",
+                        "width": "25%"
+                    },
+                    "style": {},
+                    "title": "Total bytes read from S3"
+                },
+                {
+                    "dataModelOptions": {
+                        "chart": {
+                            "colors": {
+                                "flat": "#CCCCCC"
+                            },
+                            "keyField": "totalBytesWritten",
+                            "valueField": "totalBytesWritten",
+                            "valueFields": [
+                                "totalBytesWritten",
+                                "bytesWrittenPerSecond"
+                            ],
+                            "valueFormat": ",d",
+                            "valueLabel": "",
+                            "valueLabelOverride": true,
+                            "valueLabelPlacement": "above"
+                        },
+                        "dataQueryParams": {
+                            "data": {
+                                "fields": [
+                                    "totalBytesWritten",
+                                    "bytesWrittenPerSecond"
+                                ],
+                                "schemaKeys": {
+                                    "appName": "S3-to-HDFS-Sync",
+                                    "appUser": "dttbc",
+                                    "logicalOperatorName": "HDFSFileCopyModule$BlockWriter"
+                                }
+                            },
+                            "getDataContinuously": true,
+                            "incompleteResultOK": true
+                        },
+                        "dataSource": {
+                            "appName": "S3-to-HDFS-Sync",
+                            "appPackageSource": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "name": "s3-to-hdfs-sync",
+                                "user": "dttbc",
+                                "version": "0.10.0"
+                            },
+                            "appUser": "dttbc",
+                            "displayName": "[REALTIME] OperatorMetric(HDFSFileCopyModule$BlockWriter)  (user: dttbc; app: S3-to-HDFS-Sync)",
+                            "name": "[REALTIME] OperatorMetric(HDFSFileCopyModule$BlockWriter) ",
+                            "query": {
+                                "operatorName": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "topic": "DTMetricsQuery&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "url": "pubsub"
+                            },
+                            "result": {
+                                "appendQIDToTopic": true,
+                                "operatorName": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "topic": "DTMetricsResult&S3-to-HDFS-Sync&dttbc&HDFSFileCopyModule$BlockWriter&",
+                                "url": "pubsub"
+                            },
+                            "type": "metrics"
+                        },
+                        "id": "snapshot_single_value_j64ta0fx_5",
+                        "loadingData": false,
+                        "schema": {
+                            "fieldSelectionColumns": [
+                                {
+                                    "id": "selector",
+                                    "key": "id",
+                                    "label": "",
+                                    "lockWidth": true,
+                                    "selector": true,
+                                    "width": "40px"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "id",
+                                    "key": "id",
+                                    "sort": "string"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "type",
+                                    "key": "type",
+                                    "sort": "string"
+                                }
+                            ],
+                            "fieldSelectionOptions": {
+                                "bgSizeMultiplier": "2",
+                                "defaultRowHeight": "29",
+                                "initialSorts": [
+                                    {
+                                        "dir": "+",
+                                        "id": "id"
+                                    }
+                                ],
+                                "loading": false
+                            },
+                            "fields": [
+                                {
+                                    "filter": "like",
+                                    "id": "totalBytesWritten",
+                                    "key": "totalBytesWritten",
+                                    "sort": "string",
+                                    "type": "long"
+                                },
+                                {
+                                    "filter": "like",
+                                    "id": "bytesWrittenPerSecond",
+                                    "key": "bytesWrittenPerSecond",
+                                    "sort": "string",
+                                    "type": "long"
+                                }
+                            ],
+                            "schemaKeys": {
+                                "appName": "S3-to-HDFS-Sync",
+                                "appUser": "dttbc",
+                                "logicalOperatorName": "HDFSFileCopyModule$BlockWriter"
+                            },
+                            "schemaType": "snapshot",
+                            "schemaVersion": "1.0",
+                            "values": [
+                                {
+                                    "name": "totalBytesWritten",
+                                    "type": "long"
+                                },
+                                {
+                                    "name": "bytesWrittenPerSecond",
+                                    "type": "long"
+                                }
+                            ]
+                        },
+                        "sortOptions": {
+                            "direction": "asc",
+                            "enabled": false,
+                            "key": {
+                                "name": "totalBytesWritten",
+                                "type": "long"
+                            }
+                        }
+                    },
+                    "name": "snapshot single value",
+                    "size": {
+                        "height": "100px",
+                        "minHeight": "100px",
+                        "minWidth": "200px",
+                        "width": "25%"
+                    },
+                    "style": {},
+                    "title": "Total bytes written on HDFS"
+                }
+            ]
+        }
+    },
+    "id": "dttbc:S3-to-HDFS-Sync",
+    "index": "6",
+    "mtime": "2017-08-09T10:05:31.795Z",
+    "name": "S3-to-HDFS-Sync",
+    "user": "dttbc"
+}
