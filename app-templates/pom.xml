@@ -10,7 +10,7 @@
   <parent>
     <artifactId>moodi</artifactId>
     <groupId>com.datatorrent</groupId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.1</version>
   </parent>
   <groupId>com.datatorrent.apps</groupId>
   <artifactId>moodi-app-templates</artifactId>
@@ -173,7 +173,7 @@
     <dependency>
       <groupId>com.datatorrent</groupId>
    	  <artifactId>moodi-operator-library</artifactId>
-   	  <version>0.1.0-SNAPSHOT</version>
+   	  <version>0.1.1</version>
     </dependency>
   </dependencies>
 	

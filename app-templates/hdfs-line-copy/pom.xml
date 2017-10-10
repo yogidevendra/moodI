@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.datatorrent.apps</groupId>
     <artifactId>moodi-app-templates</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.1</version>
   </parent>
 
   <groupId>com.datatorrent.apps</groupId>

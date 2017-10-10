@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.datatorrent.apps</groupId>
     <artifactId>moodi-app-templates</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.1</version>
   </parent>
   <groupId>com.datatorrent.apps</groupId>
   <version>0.10.0</version>
@@ -281,7 +281,7 @@
     <dependency>
       <groupId>com.datatorrent</groupId>
       <artifactId>moodi-aws-connectors</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
+      <version>0.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.datatorrent</groupId>
