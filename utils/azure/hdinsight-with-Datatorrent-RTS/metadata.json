@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "Deploy a HDInsight cluster with Datatorrent RTS",
+  "description": "This template allows you to create a HDInsight cluster running Datatorrent RTS. For more information, see https://www.datatorrent.com/",
+  "summary": "Deploy a HDInsight cluster running Datatorrent RTS",
+  "githubUsername": "yogidevendra",
+  "dateUpdated": "2017-10-13"
+}
