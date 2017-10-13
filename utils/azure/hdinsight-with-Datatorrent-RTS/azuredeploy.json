@@ -1,0 +1,352 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "type": "String",
+      "metadata": {
+        "description": "The name of the HDInsight cluster to be created. The cluster name must be globally unique."
+      }
+    },
+    "clusterLoginUserName": {
+      "defaultValue": "admin",
+      "type": "String",
+      "metadata": {
+        "description": "These credentials can be used to submit jobs to the cluster and to log into cluster dashboards."
+      }
+    },
+    "clusterLoginPassword": {
+      "type": "SecureString",
+      "metadata": {
+        "description": "The password must be at least 10 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter."
+      }
+    },
+    "sshUserName": {
+      "defaultValue": "sshuser",
+      "type": "String",
+      "metadata": {
+        "description": "These credentials can be used to remotely access the cluster."
+      }
+    },
+    "sshPassword": {
+      "type": "SecureString",
+      "metadata": {
+        "description": "The password must be at least 10 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter."
+      }
+    },
+    "headnodeSize": {
+      "defaultValue": "Standard_D3_v2",
+      "allowedValues": [
+        "Standard_A1_v2",
+        "Standard_A1_v2",
+        "Standard_A2_v2",
+        "Standard_A4_v2",
+        "Standard_A8_v2",
+        "Standard_A2m_v2",
+        "Standard_A4m_v2",
+        "Standard_A8m_v2",
+        "Standard_D1_v2",
+        "Standard_D2_v2",
+        "Standard_D3_v2",
+        "Standard_D4_v2",
+        "Standard_D5_v2",
+        "Standard_D11_v2",
+        "Standard_D12_v2",
+        "Standard_D13_v2",
+        "Standard_D14_v2",
+        "Standard_D15_v2",
+        "Standard_G1",
+        "Standard_G2",
+        "Standard_G3",
+        "Standard_G4",
+        "Standard_G5",
+        "Standard_H8",
+        "Standard_H16",
+        "Standard_H8m",
+        "Standard_H16m",
+        "Standard_H16r*",
+        "Standard_H16mr*"
+      ],
+      "type": "String",
+      "metadata": {
+        "description": "VM size for each head node"
+      }
+    },
+    "workernodeSize": {
+      "defaultValue": "Standard_D3_v2",
+      "allowedValues": [
+        "Standard_A1_v2",
+        "Standard_A1_v2",
+        "Standard_A2_v2",
+        "Standard_A4_v2",
+        "Standard_A8_v2",
+        "Standard_A2m_v2",
+        "Standard_A4m_v2",
+        "Standard_A8m_v2",
+        "Standard_D1_v2",
+        "Standard_D2_v2",
+        "Standard_D3_v2",
+        "Standard_D4_v2",
+        "Standard_D5_v2",
+        "Standard_D11_v2",
+        "Standard_D12_v2",
+        "Standard_D13_v2",
+        "Standard_D14_v2",
+        "Standard_D15_v2",
+        "Standard_G1",
+        "Standard_G2",
+        "Standard_G3",
+        "Standard_G4",
+        "Standard_G5",
+        "Standard_H8",
+        "Standard_H16",
+        "Standard_H8m",
+        "Standard_H16m",
+        "Standard_H16r*",
+        "Standard_H16mr*"
+      ],
+      "type": "String",
+      "metadata": {
+        "description": "VM size for each worker node"
+      }
+    },
+    "workernodeCount": {
+      "defaultValue": 2,
+      "minValue": 1,
+      "type": "Int",
+      "metadata": {
+        "description": "Number of worker nodes for HDInsight Cluster. Minimum value is 2."
+      }
+    },
+    "edgenodeSize": {
+      "defaultValue": "Standard_D3_v2",
+      "allowedValues": [
+        "Standard_A1_v2",
+        "Standard_A1_v2",
+        "Standard_A2_v2",
+        "Standard_A4_v2",
+        "Standard_A8_v2",
+        "Standard_A2m_v2",
+        "Standard_A4m_v2",
+        "Standard_A8m_v2",
+        "Standard_D1_v2",
+        "Standard_D2_v2",
+        "Standard_D3_v2",
+        "Standard_D4_v2",
+        "Standard_D5_v2",
+        "Standard_D11_v2",
+        "Standard_D12_v2",
+        "Standard_D13_v2",
+        "Standard_D14_v2",
+        "Standard_D15_v2",
+        "Standard_G1",
+        "Standard_G2",
+        "Standard_G3",
+        "Standard_G4",
+        "Standard_G5",
+        "Standard_H8",
+        "Standard_H16",
+        "Standard_H8m",
+        "Standard_H16m",
+        "Standard_H16r*",
+        "Standard_H16mr*"
+      ],
+      "type": "String",
+      "metadata": {
+        "description": "VM size for each worker node"
+      }
+    },
+    "datatorrentGatewayPort": {
+      "defaultValue": 9090,
+      "type": "Int",
+      "metadata": {
+        "description": "Datatorrent RTS gateway port"
+      }
+    },
+    "datatorrentSub-domainSuffix": {
+      "defaultValue": "dat",
+      "type": "String",
+      "minLength" : 3,
+      "maxLength" : 3,
+      "metadata": {
+        "description": "Sub-domain suffix for Datatorrent RTS gateway"
+      }
+    },
+    "blockSizeForHDFS": {
+      "defaultValue": 134217728,
+      "type": "Int",
+      "metadata": {
+        "description": "Block size for HDFS"
+      }
+    },
+    "replicationFactorForHDFS": {
+      "defaultValue": 3,
+      "type": "Int",
+      "metadata": {
+        "description": "Replication factor for HDFS"
+      }
+    },
+    "virtualToPhysicalMemoryRatioForYARN": {
+      "defaultValue": 20,
+      "minValue": 2,
+      "type": "Int",
+      "metadata": {
+        "description": "Virtual memory to physical memory ratio for YARN"
+      }
+    }
+  },
+  "variables": {
+    "clusterStorageAccountName": "[concat(parameters('clusterName'),'store')]",
+    "storageAccountType": "Standard_LRS",
+    "applicationName": "DatatorrentRTS",
+    "_artifactsLocation": "https://raw.githubusercontent.com/yogidevendra/moodI/SPOI-10488-azure-deployment-template/utils/azure/hdinsight-with-Datatorrent-RTS/",
+    "_artifactsLocationSasToken": "",
+    "installScriptActionFolder": "scripts",
+    "installScriptAction": "InstallDTRTS.sh"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "sku": {
+        "name": "[variables('storageAccountType')]"
+      },
+      "kind": "Storage",
+      "name": "[variables('clusterStorageAccountName')]",
+      "apiVersion": "2016-01-01",
+      "location": "[resourceGroup().location]",
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.HDInsight/clusters",
+      "name": "[parameters('clusterName')]",
+      "apiVersion": "2015-03-01-preview",
+      "location": "[resourceGroup().location]",
+      "tags": {},
+      "properties": {
+        "clusterVersion": "3.5",
+        "osType": "Linux",
+        "clusterDefinition": {
+          "kind": "hadoop",
+          "configurations": {
+            "gateway": {
+              "restAuthCredential.isEnabled": true,
+              "restAuthCredential.username": "[parameters('clusterLoginUserName')]",
+              "restAuthCredential.password": "[parameters('clusterLoginPassword')]"
+            },
+            "hdfs-site": {
+              "dfs.blocksize": "[parameters('blockSizeForHDFS')]",
+              "dfs.replication": "[parameters('replicationFactorForHDFS')]"
+            },
+            "yarn-site": {
+              "yarn.nodemanager.vmem-pmem-ratio": "[parameters('virtualToPhysicalMemoryRatioForYARN')]"
+            }
+          }
+        },
+        "storageProfile": {
+          "storageaccounts": [
+            {
+              "name": "[replace(replace(reference(resourceId('Microsoft.Storage/storageAccounts', variables('clusterStorageAccountName')), '2016-01-01').primaryEndpoints.blob,'https://',''),'/','')]",
+              "isDefault": true,
+              "container": "[parameters('clusterName')]",
+              "key": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('clusterStorageAccountName')), '2016-01-01').keys[0].value]"
+            }
+          ]
+        },
+        "computeProfile": {
+          "roles": [
+            {
+              "name": "headnode",
+              "targetInstanceCount": 2,
+              "hardwareProfile": {
+                "vmSize": "[parameters('headnodeSize')]"
+              },
+              "osProfile": {
+                "linuxOperatingSystemProfile": {
+                  "username": "[parameters('sshUserName')]",
+                  "password": "[parameters('sshPassword')]"
+                }
+              }
+            },
+            {
+              "name": "workernode",
+              "targetInstanceCount": "[parameters('workernodeCount')]",
+              "hardwareProfile": {
+                "vmSize": "[parameters('workernodeSize')]"
+              },
+              "osProfile": {
+                "linuxOperatingSystemProfile": {
+                  "username": "[parameters('sshUserName')]",
+                  "password": "[parameters('sshPassword')]"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/',variables('clusterStorageAccountName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.HDInsight/clusters/applications",
+      "name": "[concat(parameters('clusterName'),'/', variables('applicationName'))]",
+      "apiVersion": "2015-03-01-preview",
+      "properties": {
+        "marketPlaceIdentifier": "EmptyNode",
+        "computeProfile": {
+          "roles": [
+            {
+              "name": "edgenode",
+              "targetInstanceCount": 1,
+              "hardwareProfile": {
+                "vmSize": "[parameters('edgenodeSize')]"
+              }
+            }
+          ]
+        },
+        "installScriptActions": [
+          {
+            "name": "[concat('emptynode','-' ,uniquestring(variables('applicationName')))]",
+            "uri": "[concat(variables('_artifactsLocation'), '/', variables('installScriptActionFolder'), '/', variables('installScriptAction'), variables('_artifactsLocationSasToken'))]",
+            "parameters": "[parameters('datatorrentGatewayPort')]",
+            "roles": [
+              "edgenode"
+            ]
+          }
+        ],
+        "uninstallScriptActions": [],
+        "httpsEndpoints": [
+          {
+            "subDomainSuffix": "[parameters('datatorrentSub-domainSuffix')]",
+            "destinationPort": "[parameters('datatorrentGatewayPort')]",
+            "accessModes": [
+              "webpage"
+            ]
+          }
+        ],
+        "applicationType": "CustomApplication"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.HDInsight/clusters/',parameters('clusterName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "storage": {
+      "type": "Object",
+      "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('clusterStorageAccountName')))]"
+    },
+    "cluster": {
+      "type": "Object",
+      "value": "[reference(resourceId('Microsoft.HDInsight/clusters',parameters('clusterName')))]"
+    },
+    "application": {
+      "type": "Object",
+      "value": "[reference(resourceId('Microsoft.HDInsight/clusters/applications/',parameters('clusterName'), variables('applicationName')))]"
+    },
+    "datatorrent rts gateway": {
+      "type": "String",
+      "value": "[concat('https://',parameters('clusterName'), '-dat.apps.azurehdinsight.net')]"
+    }
+  }
+}
