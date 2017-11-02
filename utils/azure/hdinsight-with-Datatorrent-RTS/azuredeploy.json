@@ -199,7 +199,7 @@
     "clusterStorageAccountName": "[concat(parameters('clusterName'),'store')]",
     "storageAccountType": "Standard_LRS",
     "applicationName": "DatatorrentRTS",
-    "_artifactsLocation": "https://raw.githubusercontent.com/yogidevendra/moodI/SPOI-10488-azure-deployment-template/utils/azure/hdinsight-with-Datatorrent-RTS/",
+    "_artifactsLocation": "https://raw.githubusercontent.com/DataTorrent/moodI/master/utils/azure/hdinsight-with-Datatorrent-RTS/",
     "_artifactsLocationSasToken": "",
     "installScriptActionFolder": "scripts",
     "installScriptAction": "InstallDTRTS.sh"
