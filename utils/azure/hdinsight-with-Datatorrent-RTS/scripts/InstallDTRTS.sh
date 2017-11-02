@@ -1,14 +1,12 @@
 #!/bin/bash
 
-DT_VERSION='3.9.1'
-DT_INSTALLER='datatorrent-rts-'$DT_VERSION'.bin'
+DT_INSTALLER='datatorrent-rts.bin'
 DT_INSTALLER_MD5=$DT_INSTALLER'.md5'
-DT_DOWNLOADS='https://www.datatorrent.com/downloads'
+DT_DOWNLOADS='https://www.datatorrent.com/downloads/latest'
 PORT=$1
 
-DT_PATH=$DT_DOWNLOADS'/'$DT_VERSION'/'$DT_INSTALLER
-DT_PATH_MD5=$DT_DOWNLOADS'/'$DT_VERSION'/'$DT_INSTALLER_MD5
-
+DT_PATH=$DT_DOWNLOADS'/'$DT_INSTALLER
+DT_PATH_MD5=$DT_DOWNLOADS'/'$DT_INSTALLER_MD5
 download()
 {
   FILE_PATH=$1
