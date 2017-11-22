@@ -7,6 +7,16 @@ PORT=$1
 
 DT_PATH=$DT_DOWNLOADS'/'$DT_INSTALLER
 DT_PATH_MD5=$DT_DOWNLOADS'/'$DT_INSTALLER_MD5
+
+DT_ADMIN_USER="dtadmin"
+
+create_user()
+{
+  echo "Creating dtadmin user".
+  DT_USER=$1
+  useradd -m -K "UMASK=022" -g "hadoop" $DT_USER
+}
+
 download()
 {
   FILE_PATH=$1
@@ -47,11 +57,12 @@ checksum()
 install()
 {
   INSTALLER=$1
-  GATEWAY_PORT=$2
+  GATEWAY_USER=$2
+  GATEWAY_PORT=$3
   echo "Installing $INSTALLER"
 
   chmod +x $INSTALLER
-  /bin/sh $INSTALLER -g $GATEWAY_PORT
+  /bin/sh $INSTALLER -U $GATEWAY_USER -g $GATEWAY_PORT
 
   echo
 }
@@ -59,5 +70,6 @@ install()
 download $DT_PATH
 download $DT_PATH_MD5
 checksum $DT_INSTALLER $DT_INSTALLER_MD5
-install $DT_INSTALLER $PORT
+create_user $DT_ADMIN_USER
+install $DT_INSTALLER $DT_ADMIN_USER $PORT
 
