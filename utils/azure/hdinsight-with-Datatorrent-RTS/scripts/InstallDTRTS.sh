@@ -9,12 +9,14 @@ DT_PATH=$DT_DOWNLOADS'/'$DT_INSTALLER
 DT_PATH_MD5=$DT_DOWNLOADS'/'$DT_INSTALLER_MD5
 
 DT_ADMIN_USER="dtadmin"
+DT_ADMIN_USER_GROUP="hadoop"
 
 create_user()
 {
   echo "Creating dtadmin user".
   DT_USER=$1
-  useradd -m -K "UMASK=022" -g "hadoop" $DT_USER
+  DT_USER_GROUP=$2
+  useradd -m -K "UMASK=022" -g $DT_USER_GROUP $DT_USER
 }
 
 download()
@@ -58,18 +60,19 @@ install()
 {
   INSTALLER=$1
   GATEWAY_USER=$2
-  GATEWAY_PORT=$3
+  GATEWAY_GROUP=$3
+  GATEWAY_PORT=$4
   echo "Installing $INSTALLER"
 
   chmod +x $INSTALLER
-  /bin/sh $INSTALLER -U $GATEWAY_USER -g $GATEWAY_PORT
+  /bin/sh $INSTALLER -U $GATEWAY_USER -G $GATEWAY_GROUP -g $GATEWAY_PORT
 
-  echo
 }
 
 download $DT_PATH
 download $DT_PATH_MD5
 checksum $DT_INSTALLER $DT_INSTALLER_MD5
-create_user $DT_ADMIN_USER
-install $DT_INSTALLER $DT_ADMIN_USER $PORT
-
+create_user $DT_ADMIN_USER $DT_ADMIN_USER_GROUP
+install $DT_INSTALLER $DT_ADMIN_USER $DT_ADMIN_USER_GROUP $PORT
+#Following restart is required for SPOI-12825
+sudo -H -u $DT_ADMIN_USER dtgateway restart
