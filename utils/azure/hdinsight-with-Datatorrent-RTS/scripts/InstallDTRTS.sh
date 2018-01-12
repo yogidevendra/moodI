@@ -75,4 +75,5 @@ checksum $DT_INSTALLER $DT_INSTALLER_MD5
 create_user $DT_ADMIN_USER $DT_ADMIN_USER_GROUP
 install $DT_INSTALLER $DT_ADMIN_USER $DT_ADMIN_USER_GROUP $PORT
 #Following restart is required for SPOI-12825
+sleep 1m
 sudo -H -u $DT_ADMIN_USER dtgateway restart
