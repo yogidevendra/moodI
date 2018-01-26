@@ -40,6 +40,31 @@ public class TransformOperator extends com.datatorrent.lib.transform.TransformOp
   @Override
   public void registerSchema(Map<InputPort, Schema> inSchema, Map<OutputPort, Schema> outSchema)
   {
+    if (expressionInfo != null) {
+      try {
+        setExpressionMap((Map<String, String>)new ObjectMapper().readValue(expressionInfo,
+          new TypeReference<Map<String, String>>()
+          {
+          }));
+      } catch (IOException e) {
+        throw new RuntimeException("Not a valid JSON " + expressionInfo);
+      }
+    } else {
+      throw new RuntimeException("Property expressionInfo is not set");
+    }
+    
+    if (outputFieldInfo != null) {
+      try {
+        outputFieldMap = new ObjectMapper().readValue(outputFieldInfo, new TypeReference<Map<String, String>>()
+        {
+        });
+      } catch (IOException e) {
+        throw new RuntimeException("Not a valid JSON " + outputFieldInfo);
+      }
+    } else {
+      throw new RuntimeException("Property outputFieldInfo is not set");
+    }
+    
     if (outSchema.get(output) != null) {
       for (Entry<String, String> field : outputFieldMap.entrySet()) {
         outSchema.get(output).addField(field.getKey(), getClass(FieldType.valueOf(field.getValue())));
@@ -70,13 +95,6 @@ public class TransformOperator extends com.datatorrent.lib.transform.TransformOp
   public void setOutputFieldInfo(String outputFieldInfo)
   {
     this.outputFieldInfo = outputFieldInfo;
-    try {
-      this.outputFieldMap = new ObjectMapper().readValue(this.outputFieldInfo, new TypeReference<Map<String, String>>()
-      {
-      });
-    } catch (IOException e) {
-      throw new RuntimeException("Not a valid JSON " + outputFieldInfo);
-    }
   }
 
   /**
@@ -105,14 +123,6 @@ public class TransformOperator extends com.datatorrent.lib.transform.TransformOp
   public void setExpressionInfo(String expressionInfo)
   {
     this.expressionInfo = expressionInfo;
-    try {
-      this.setExpressionMap((Map<String, String>)new ObjectMapper().readValue(this.expressionInfo,
-          new TypeReference<Map<String, String>>()
-          {
-          }));
-    } catch (IOException e) {
-      throw new RuntimeException("Not a valid JSON " + expressionInfo);
-    }
   }
 
   private Class getClass(FieldType type)

@@ -34,6 +34,7 @@ public class TransformOperatorTest
     Map<String, String> outputFieldMap = new HashMap<String, String>();
     outputFieldMap.put("uniqueId", "STRING");
     transform.setOutputFieldInfo("{\"uniqueId\":\"STRING\"}");
+    transform.setExpressionInfo("{\"uniqueId\":\"2 * id\"}");
     transform.registerSchema(inSchema, outSchema);
     transform.setup(null);
   }

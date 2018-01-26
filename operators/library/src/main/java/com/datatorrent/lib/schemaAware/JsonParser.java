@@ -44,6 +44,18 @@ public class JsonParser extends com.datatorrent.contrib.parser.JsonParser implem
    */
   public void registerSchema(Map<InputPort, Schema> inSchema, Map<OutputPort, Schema> outSchema)
   {
+    if (fieldInfoMap != null) {
+      try {
+        fieldInfoMap = new ObjectMapper().readValue(fieldInfo, new TypeReference<Map<String, String>>()
+        {
+        });
+      } catch (IOException e) {
+        throw new RuntimeException("Not a valid JSON " + fieldInfo);
+      } 
+    } else {
+      throw new RuntimeException("Property fieldInfo is not set");
+    }
+    
     if (outSchema.get(this.out) != null) {
       for (String field : fieldInfoMap.keySet()) {
         outSchema.get(this.out).addField(field,
@@ -71,13 +83,6 @@ public class JsonParser extends com.datatorrent.contrib.parser.JsonParser implem
   public void setFieldInfo(String fieldInfo)
   {
     this.fieldInfo = fieldInfo;
-    try {
-      this.fieldInfoMap = new ObjectMapper().readValue(this.fieldInfo, new TypeReference<Map<String, String>>()
-      {
-      });
-    } catch (IOException e) {
-      throw new RuntimeException("Not a valid JSON " + fieldInfo);
-    }
   }
 
   @Override
