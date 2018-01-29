@@ -12,11 +12,11 @@
   <parent>
     <groupId>com.datatorrent.apps</groupId>
     <artifactId>moodi-app-templates</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   
   <groupId>com.datatorrent.apps</groupId>
-  <version>0.10.0</version>
+  <version>0.11.0</version>
   <artifactId>s3-to-redshift</artifactId>
   <packaging>jar</packaging>
 
@@ -29,7 +29,7 @@
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, redshift, s3</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
-    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
+    <apex.apppackage.requiresRTSVersion>3.9.2</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <build>
@@ -293,7 +293,7 @@
     <dependency>
       <groupId>com.datatorrent</groupId>
       <artifactId>moodi-aws-connectors</artifactId>
-      <version>0.1.1</version>
+      <version>0.2.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <repositories>

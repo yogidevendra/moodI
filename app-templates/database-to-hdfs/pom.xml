@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.datatorrent.apps</groupId>
-  <version>0.9.0</version>
+  <version>0.11.0</version>
   <artifactId>database-to-hdfs</artifactId>
   <packaging>jar</packaging>
 
@@ -20,12 +20,13 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.4.0</apex.version>
+    <apex.version>3.7.0-rts-3.9.2</apex.version>
+    <malhar.version>3.8.0-rts-3.9.2</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
-    <malhar.version>3.7.0</malhar.version>
     <skipTests>true</skipTests>
     <apex.apppackage.tags>app-template, db, hdfs, PostgreSQL, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
+    <apex.apppackage.requiresRTSVersion>3.9.2</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <build>

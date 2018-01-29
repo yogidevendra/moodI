@@ -11,17 +11,17 @@
   <parent>
     <groupId>com.datatorrent.apps</groupId>
     <artifactId>moodi-app-templates</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <artifactId>kafka-to-cassandra-filter-transform</artifactId>
   <name>Kafka to Cassandra Filter Transform App</name>
-  <version>0.10.0</version>
+  <version>0.11.0</version>
   <description>Ingest records from kafka along with transformation and write to cassandra store.</description>
 
   <properties>
     <apex.apppackage.tags>app-template, kafka, cassandra, filter, process</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
-    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
+    <apex.apppackage.requiresRTSVersion>3.9.2</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <dependencies>

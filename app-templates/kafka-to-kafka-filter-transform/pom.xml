@@ -11,17 +11,17 @@
   <parent>
     <groupId>com.datatorrent.apps</groupId>
     <artifactId>moodi-app-templates</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
   <artifactId>kafka-to-kafka-filter-transform</artifactId>
   <name>Kafka to Kafka  Filter Transform App</name>
-  <version>0.10.0</version>
+  <version>0.11.0</version>
   <description>Ingest data from kafka, process it and write back to kafka.</description>
 
   <properties>
     <apex.apppackage.tags>app-template, kafka, filter, process</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
-    <apex.apppackage.requiresRTSVersion>3.9.0</apex.apppackage.requiresRTSVersion>
+    <apex.apppackage.requiresRTSVersion>3.9.2</apex.apppackage.requiresRTSVersion>
   </properties>
 
   <dependencies>
