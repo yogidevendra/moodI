@@ -153,7 +153,7 @@
       ],
       "type": "String",
       "metadata": {
-        "description": "VM size for each worker node"
+        "description": "VM size for edge node"
       }
     },
     "datatorrentGatewayPort": {
